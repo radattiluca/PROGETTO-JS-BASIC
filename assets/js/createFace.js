@@ -7,13 +7,14 @@ paragrafoDisplayClock.id = "display-clock";
 paragrafoDisplayClock.innerHTML = '0';
 divContenitoreClock.appendChild(paragrafoDisplayClock);
 
-//creato contenitore clock con paragrafo all'interno del nodo row-clock
+
+//creato contenitore counter con paragrafo all'interno del nodo row-counter
 const divContenitoreCounter = document.querySelector("#row-counter");
 const paragrafoDisplayCounter = document.createElement("p");
 paragrafoDisplayCounter.className = "display";
-paragrafoDisplayCounter.id = "display-count";
+paragrafoDisplayCounter.id = "displayCount";
 paragrafoDisplayCounter.innerHTML = '0';
-divContenitoreCounter.appendChild(paragrafoDisplayCounter);
+divContenitoreCounter.prepend(paragrafoDisplayCounter);
 //creato pulsanti all'interno del nodo row-counter
 const pulsantePiu = document.createElement("button");
 const pulsanteReset = document.createElement("button");
@@ -24,7 +25,7 @@ pulsanteReset.id = "reset";
 pulsanteReset.innerHTML = "Reset";
 pulsanteMeno.id = "minus";
 pulsanteMeno.innerHTML = "-";
-divContenitoreCounter.append( pulsanteMeno, pulsanteReset, pulsantePiu);
+paragrafoDisplayCounter.after( pulsanteMeno, pulsanteReset, pulsantePiu);
 
 //creato contenitore countdown con paragrafo all'interno del nodo row-countdown
 const divContenitoreCountdown = document.querySelector("#row-countdown");
