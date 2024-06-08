@@ -12,7 +12,7 @@ divContenitoreClock.appendChild(paragrafoDisplayClock);
 const divContenitoreCounter = document.querySelector("#row-counter");
 const paragrafoDisplayCounter = document.createElement("p");
 paragrafoDisplayCounter.className = "display";
-paragrafoDisplayCounter.id = "displayCount";
+paragrafoDisplayCounter.id = "display-count";
 paragrafoDisplayCounter.innerHTML = '0';
 divContenitoreCounter.prepend(paragrafoDisplayCounter);
 //creato pulsanti all'interno del nodo row-counter
@@ -26,6 +26,7 @@ pulsanteReset.innerHTML = "Reset";
 pulsanteMeno.id = "minus";
 pulsanteMeno.innerHTML = "-";
 paragrafoDisplayCounter.after( pulsanteMeno, pulsanteReset, pulsantePiu);
+
 
 //creato contenitore countdown con paragrafo all'interno del nodo row-countdown
 const divContenitoreCountdown = document.querySelector("#row-countdown");

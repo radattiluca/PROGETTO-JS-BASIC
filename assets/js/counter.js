@@ -2,7 +2,7 @@
 
 const plus = document.querySelector('#plus');
 const minus = document.querySelector('#minus');
-const display = document.querySelectord('#display-count');
+const display = document.querySelector('#display-count');
 const reset = document.querySelector('#reset');
 let myCount = 0;
 
