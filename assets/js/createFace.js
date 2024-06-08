@@ -36,6 +36,7 @@ paragrafoDisplayCountdown.id = "display-countdown";
 paragrafoDisplayCountdown.innerHTML = '0';
 divContenitoreCountdown.appendChild(paragrafoDisplayCountdown);
 //creato pulsanti all'interno del nodo countdown
+
 const pulsanteImposta = document.createElement("button");
 const pulsanteAvvia = document.createElement("button");
 const pulsanteStop = document.createElement("button");
