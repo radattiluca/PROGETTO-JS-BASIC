@@ -34,7 +34,7 @@ const paragrafoDisplayCountdown = document.createElement("p");
 paragrafoDisplayCountdown.className = "display";
 paragrafoDisplayCountdown.id = "display-countdown";
 paragrafoDisplayCountdown.innerHTML = '0';
-divContenitoreCountdown.appendChild(paragrafoDisplayCountdown);
+divContenitoreCountdown.prepend(paragrafoDisplayCountdown);
 //creato pulsanti all'interno del nodo countdown
 
 const pulsanteImposta = document.createElement("button");
@@ -46,6 +46,6 @@ pulsanteAvvia.id = "avvia";
 pulsanteAvvia.innerHTML = "Avvia";
 pulsanteStop.id = "resetTimer";
 pulsanteStop.innerHTML = "Reset";
-divContenitoreCountdown.append( pulsanteAvvia, pulsanteImposta, pulsanteStop);
+paragrafoDisplayCountdown.after( pulsanteAvvia, pulsanteImposta, pulsanteStop);
 
 
