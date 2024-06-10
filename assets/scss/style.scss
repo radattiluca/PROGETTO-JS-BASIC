@@ -39,3 +39,23 @@ button{
     border-radius: 20px;
     margin: 5px;
 }
+
+.containerMovie{
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    bottom: 0px;
+        img{
+            display: flex;
+            width: 20%;
+        };
+        #slug{
+            position: relative;
+            cursor: pointer;
+            bottom:12px;
+        }
+        #mario{
+            position: relative;
+            cursor: pointer;
+        }
+}
