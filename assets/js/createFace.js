@@ -44,8 +44,8 @@ pulsanteImposta.id = "imposta";
 pulsanteImposta.innerHTML = "Imposta";
 pulsanteAvvia.id = "avvia";
 pulsanteAvvia.innerHTML = "Avvia";
-pulsanteStop.id = "stop";
-pulsanteStop.innerHTML = "Stop";
+pulsanteStop.id = "resetTimer";
+pulsanteStop.innerHTML = "Reset";
 divContenitoreCountdown.append( pulsanteAvvia, pulsanteImposta, pulsanteStop);
 
 
