@@ -44,8 +44,8 @@ pulsanteImposta.id = "imposta";
 pulsanteImposta.innerHTML = "Imposta";
 pulsanteAvvia.id = "avvia";
 pulsanteAvvia.innerHTML = "Avvia";
-pulsanteStop.id = "resetTimer";
-pulsanteStop.innerHTML = "Reset";
+pulsanteStop.id = "stopTimer";
+pulsanteStop.innerHTML = "Stop";
 paragrafoDisplayCountdown.after( pulsanteAvvia, pulsanteImposta, pulsanteStop);
 
 

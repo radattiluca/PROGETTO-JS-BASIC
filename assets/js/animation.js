@@ -3,6 +3,7 @@
 let runSlug = document.querySelector("#slug");
 let runMario = document.querySelector("#mario");
 
+
 runSlug.onclick = function() {
     let start = Date.now();
 
@@ -16,3 +17,12 @@ runSlug.onclick = function() {
 
     }, 20);
   };
+
+ let stimaCoord = setInterval(function(){
+    let coordinate = runSlug.getBoundingClientRect();
+    console.log(coordinate);
+    if (coordinate.right == 700 ){
+      document.querySelector("#slug").hidden = true;
+    }
+ }, 5000);
+ 

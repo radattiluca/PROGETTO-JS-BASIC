@@ -3,7 +3,7 @@
 const backTime = document.querySelector('#display-countdown');
 const start = document.querySelector('#avvia');
 const set = document.querySelector('#imposta');
-const resetCountDown = document.querySelector('#resetTimer');
+const stopCountDown = document.querySelector('#stopTimer');
 
 backTime.textContent="0";
 
@@ -28,8 +28,8 @@ set.addEventListener('click', function questionSecond(){
               clearInterval(mytimer);
             }
         },1000);
-        resetCountDown.addEventListener('click', function(){
-            backTime.innerHTML = "0";
+        stopCountDown.addEventListener('click', function(){
+            //ripristinare il pulsante pausa perchè funzionaaaa!
             clearInterval(mytimer);
         });    
     });
