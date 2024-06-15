@@ -1,10 +1,10 @@
-"use strict";
+/**"use strict";
 
 let runSlug = document.querySelector("#slug");
 let runMario = document.querySelector("#mario");
 
 
-runSlug.onclick = function() {
+  runSlug.onclick = setInterval(function run() {
     let start = Date.now();
 
     let timer = setInterval(function() {
@@ -16,13 +16,9 @@ runSlug.onclick = function() {
       if (timePassed > 2000) clearInterval(timer);
 
     }, 20);
-  };
+  }, 2000);
+**/
 
- let stimaCoord = setInterval(function(){
-    let coordinate = runSlug.getBoundingClientRect();
-    console.log(coordinate);
-    if (coordinate.right == 700 ){
-      document.querySelector("#slug").hidden = true;
-    }
- }, 5000);
+
+
  

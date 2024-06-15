@@ -25,11 +25,18 @@ set.addEventListener('click', function questionSecond(){
         backTime.innerHTML = timeDown;
             if (timeDown <= 0) {
               backTime.innerHTML = "Time Out!";
-              clearInterval(mytimer);
+                
+                let flashing1 = setInterval(function() {
+                backTime.style.color = "#8f8288"},1000);
+                let flashing2 =  setInterval(function() {
+                backTime.style.color = ""},2000);
+                setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
+                clearInterval(mytimer);
             }
         },1000);
+        
         stopCountDown.addEventListener('click', function(){
-            //ripristinare il pulsante pausa perchè funzionaaaa!
+            start.innerHTML = "Riprendi";
             clearInterval(mytimer);
         });    
     });
