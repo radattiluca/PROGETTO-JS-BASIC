@@ -42,3 +42,6 @@ set.addEventListener('click', function questionSecond(){
     });
 });
 
+document.querySelector("#refresh").addEventListener('click', function(){
+    location.reload() 
+});

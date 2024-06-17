@@ -40,12 +40,16 @@ divContenitoreCountdown.prepend(paragrafoDisplayCountdown);
 const pulsanteImposta = document.createElement("button");
 const pulsanteAvvia = document.createElement("button");
 const pulsanteStop = document.createElement("button");
+const pulsanteRefresh = document.createElement("button");
 pulsanteImposta.id = "imposta";
 pulsanteImposta.innerHTML = "Imposta";
 pulsanteAvvia.id = "avvia";
 pulsanteAvvia.innerHTML = "Avvia";
 pulsanteStop.id = "stopTimer";
 pulsanteStop.innerHTML = "Stop";
-paragrafoDisplayCountdown.after( pulsanteAvvia, pulsanteImposta, pulsanteStop);
+pulsanteRefresh.id = "refresh";
+pulsanteRefresh.className = "refreshStyle";
+pulsanteRefresh.innerHTML = "&#10226;";
+paragrafoDisplayCountdown.after( pulsanteAvvia, pulsanteImposta, pulsanteStop, pulsanteRefresh);
 
 
