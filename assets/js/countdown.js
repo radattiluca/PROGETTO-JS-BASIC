@@ -4,6 +4,7 @@ const backTime = document.querySelector('#display-countdown');
 const start = document.querySelector('#avvia');
 const set = document.querySelector('#imposta');
 const stopCountDown = document.querySelector('#stopTimer');
+const azzera = document.querySelector("#refresh");
 
 backTime.textContent="0";
 
@@ -42,6 +43,14 @@ set.addEventListener('click', function questionSecond(){
     });
 });
 
-document.querySelector("#refresh").addEventListener('click', function(){
+azzera.addEventListener('click', function(){
     location.reload() 
+});
+
+azzera.addEventListener("mouseover", (event) => {
+    pulsanteRefresh.innerHTML = "&#10227;";
+});
+
+azzera.addEventListener("mouseout", (event) => {
+    pulsanteRefresh.innerHTML = "&#10226;";
 });
