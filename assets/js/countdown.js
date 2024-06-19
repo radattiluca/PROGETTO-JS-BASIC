@@ -48,7 +48,7 @@ azzera.addEventListener('click', function(){
 });
 
 azzera.addEventListener("mouseover", (event) => {
-    pulsanteRefresh.innerHTML = "&#10227;";
+    pulsanteRefresh.innerHTML = "&#10227;"; // crearlo con css in modo da farla girare
 });
 
 azzera.addEventListener("mouseout", (event) => {
