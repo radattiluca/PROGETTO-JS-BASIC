@@ -5,6 +5,7 @@ const start = document.querySelector('#avvia');
 const set = document.querySelector('#imposta');
 const stopCountDown = document.querySelector('#stopTimer');
 const azzera = document.querySelector("#refresh");
+const imageArrows = document.querySelector("#circleArrows")
 
 backTime.textContent="0";
 
@@ -45,12 +46,4 @@ set.addEventListener('click', function questionSecond(){
 
 azzera.addEventListener('click', function(){
     location.reload() 
-});
-
-azzera.addEventListener("mouseover", (event) => {
-    pulsanteRefresh.innerHTML = "&#10227;"; // crearlo con css in modo da farla girare
-});
-
-azzera.addEventListener("mouseout", (event) => {
-    pulsanteRefresh.innerHTML = "&#10226;";
 });

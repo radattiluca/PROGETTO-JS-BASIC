@@ -49,7 +49,7 @@ pulsanteStop.id = "stopTimer";
 pulsanteStop.innerHTML = "Stop";
 pulsanteRefresh.id = "refresh";
 pulsanteRefresh.className = "refreshStyle";
-pulsanteRefresh.innerHTML = "&#10226;";
+pulsanteRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
 paragrafoDisplayCountdown.after( pulsanteAvvia, pulsanteImposta, pulsanteStop, pulsanteRefresh);
 
 

@@ -9,7 +9,7 @@ let myCount = 0;
 // capire perchè non parte lo script 
 
 plus.addEventListener('click', () =>{
-    myCount-=5; //per il pulsante + 5 e - 5
+    myCount++; 
     display.textContent = myCount;
     
 });
