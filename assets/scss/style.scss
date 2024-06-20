@@ -48,9 +48,8 @@ body{
         #circleArrows{
             width: 20px;
             margin-top: 2px;
-            cursor: pointer;
                 &:hover{
-                    transform: rotate(90deg);
+                    transform: rotate(-135deg);
                 }
         }
 }
