@@ -26,7 +26,7 @@ set.addEventListener('click', function questionSecond(){
         
         backTime.innerHTML = timeDown;
             if (timeDown <= 0) {
-              backTime.innerHTML = "Time Out!";
+                backTime.innerHTML = "Time Out!";
                 
                 let flashing1 = setInterval(function() {
                 backTime.style.color = "#8f8288"},1000);
@@ -35,7 +35,7 @@ set.addEventListener('click', function questionSecond(){
                 setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
                 clearInterval(mytimer);
             }
-        },1000);
+        }, 1000);
         
         stopCountDown.addEventListener('click', function(){
             start.innerHTML = "Riprendi";
