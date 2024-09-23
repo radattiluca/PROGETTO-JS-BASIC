@@ -25,7 +25,7 @@ pulsanteReset.id = "reset";
 pulsanteReset.innerHTML = "Reset";
 pulsanteMeno.id = "minus";
 pulsanteMeno.innerHTML = "-";
-paragrafoDisplayCounter.after( pulsanteMeno, pulsanteReset, pulsantePiu);
+
 
 
 //creato contenitore countdown con paragrafo all'interno del nodo row-countdown
@@ -35,8 +35,8 @@ paragrafoDisplayCountdown.className = "display";
 paragrafoDisplayCountdown.id = "display-countdown";
 paragrafoDisplayCountdown.innerHTML = '0';
 divContenitoreCountdown.prepend(paragrafoDisplayCountdown);
-//creato pulsanti all'interno del nodo countdown
 
+//creato pulsanti all'interno del nodo countdown
 const pulsanteImposta = document.createElement("button");
 const pulsanteAvvia = document.createElement("button");
 const pulsanteStop = document.createElement("button");
@@ -50,5 +50,7 @@ pulsanteStop.innerHTML = "Stop";
 pulsanteRefresh.id = "refresh";
 pulsanteRefresh.className = "refreshStyle";
 pulsanteRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
-paragrafoDisplayCountdown.after( pulsanteAvvia, pulsanteImposta, pulsanteStop, pulsanteRefresh);
 
+
+const containerBottom = document.querySelector("#row-bottom");
+containerBottom.append(pulsanteAvvia, pulsanteImposta, pulsanteStop, pulsanteRefresh, pulsanteMeno, pulsanteReset, pulsantePiu);

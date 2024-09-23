@@ -14,10 +14,11 @@ body{
 
 .column-counter{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
     justify-content: center;
     margin-top: 80px;
 }
+
 
 .row-interface{
     width:100%;
