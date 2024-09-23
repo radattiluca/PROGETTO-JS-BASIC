@@ -42,9 +42,9 @@ const pulsanteAvvia = document.createElement("button");
 const pulsanteStop = document.createElement("button");
 const pulsanteRefresh = document.createElement("button");
 pulsanteImposta.id = "imposta";
-pulsanteImposta.innerHTML = "Imposta";
+pulsanteImposta.innerHTML = "Set";
 pulsanteAvvia.id = "avvia";
-pulsanteAvvia.innerHTML = "Avvia";
+pulsanteAvvia.innerHTML = "Play";
 pulsanteStop.id = "stopTimer";
 pulsanteStop.innerHTML = "Stop";
 pulsanteRefresh.id = "refresh";
@@ -53,4 +53,8 @@ pulsanteRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefres
 
 
 const containerBottom = document.querySelector("#row-bottom");
-containerBottom.append(pulsanteAvvia, pulsanteImposta, pulsanteStop, pulsanteRefresh, pulsanteMeno, pulsanteReset, pulsantePiu);
+const circleContAnairBottom = document.querySelector("#countAiner");
+const circleCountDownAiner = document.querySelector("#countDownAiner");
+
+circleContAnairBottom.append(pulsanteMeno, pulsanteReset, pulsantePiu);
+circleCountDownAiner.append(pulsanteAvvia, pulsanteImposta, pulsanteStop);

@@ -38,7 +38,7 @@ set.addEventListener('click', function questionSecond(){
         }, 1000);
         
         stopCountDown.addEventListener('click', function(){
-            start.innerHTML = "Riprendi";
+            start.innerHTML = "Replay";
             clearInterval(mytimer);
         });    
     });

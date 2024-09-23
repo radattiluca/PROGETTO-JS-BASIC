@@ -1,13 +1,12 @@
 
 button{
-  background-color:  rgb(119, 136, 153); 
-  border-radius: 100px;
+  background-color: red;
   color: black;
   cursor: pointer;
-  width: 80px;
-  height: 30px;
-  display: inline-block;
-  margin: 5px;
+  width: auto;
+  border-radius: 60px;
+  display: block;
+  margin: 5px auto 5px auto;
   text-align: center;
   text-decoration: none;
   transition: all 250ms;
