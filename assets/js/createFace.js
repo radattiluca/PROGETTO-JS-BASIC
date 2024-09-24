@@ -57,4 +57,5 @@ const circleContAnairBottom = document.querySelector("#countAiner");
 const circleCountDownAiner = document.querySelector("#countDownAiner");
 
 circleContAnairBottom.append(pulsanteMeno, pulsanteReset, pulsantePiu);
+circleContAnairBottom.after(pulsanteRefresh);
 circleCountDownAiner.append(pulsanteAvvia, pulsanteImposta, pulsanteStop);
