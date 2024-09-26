@@ -51,11 +51,22 @@ pulsanteRefresh.id = "refresh";
 pulsanteRefresh.className = "refreshStyle";
 pulsanteRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
 
+//creato pulsanti 25" e 5"
+const pulsanteTwentyFive = document.createElement("button");
+pulsanteTwentyFive.id = "bottonTwentyFive";
+pulsanteTwentyFive.innerHTML = "25'";
+const pulsanteFive = document.createElement("button");
+pulsanteFive.id = "bottonFive";
+pulsanteFive.innerHTML = "5'";
 
-const containerBottom = document.querySelector("#row-bottom");
-const circleContAnairBottom = document.querySelector("#countAiner");
+const containerBotton = document.querySelector("#row-botton");
+const circleContAnairBotton = document.querySelector("#countAiner");
 const circleCountDownAiner = document.querySelector("#countDownAiner");
+const circleTwentyFive = document.querySelector("#twentyFive");
+const circleFive = document.querySelector("#five");
 
-circleContAnairBottom.append(pulsanteMeno, pulsanteReset, pulsantePiu);
-circleContAnairBottom.after(pulsanteRefresh);
+circleContAnairBotton.append(pulsanteMeno, pulsanteReset, pulsantePiu);
+circleCountDownAiner.after(pulsanteRefresh);
 circleCountDownAiner.append(pulsanteAvvia, pulsanteImposta, pulsanteStop);
+circleTwentyFive.append(pulsanteTwentyFive);
+circleFive.append(pulsanteFive);

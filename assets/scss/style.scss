@@ -19,18 +19,18 @@ body{
     margin-top: 80px;
 }
 
-#row-bottom{
+#row-botton{
     /*used to position buttons to the right of displays.
     The element will start on row 1 and column 2 and span 3 rows and 1 column*/
     grid-area: 1 / 2 / span 3 / span 1;
 }
 
-.groupBottom{
-    width: 100px;
-    height: 100px;
+.groupBotton{
+    width: 60px;
+    height: 60px;
     background-color: red;
-    border-radius: 200px;
-    margin: 20px auto 20px auto;
+    border-radius: 120px;
+    margin: 5px auto 5px auto;
     padding: 10px 0 10px 0;
 }
 
@@ -38,6 +38,7 @@ body{
     width:100%;
     margin-bottom: 10px;
     text-align: center;
+
 }
 
 .display{
