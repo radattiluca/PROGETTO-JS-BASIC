@@ -33,19 +33,33 @@ pulsanteMeno.innerHTML = "-";
 
 //creato contenitore countdown con paragrafo all'interno del nodo row-countdown
 const divContenitoreCountdown = document.querySelector("#row-countdown");
-const paragrafoDisplayCountdown = document.createElement("p");
+const paragrafoDisplayCountdown = document.createElement("div");
+const containerHours = document.createElement('div');
+const containerMinutes = document.createElement('div');
+const containerSeconds = document.createElement('div');
+const paragrafoTwoPoints = document.createElement('span');
+const twoTwoPoints = paragrafoTwoPoints.cloneNode(true);
 paragrafoDisplayCountdown.className = "display";
 paragrafoDisplayCountdown.id = "display-countdown";
-paragrafoDisplayCountdown.innerHTML = '0';
+paragrafoTwoPoints.className = "styleTwoPoints";
+paragrafoTwoPoints.innerHTML = ':';
+twoTwoPoints.innerHTML = ':';
 divContenitoreCountdown.prepend(paragrafoDisplayCountdown);
+paragrafoDisplayCountdown.append(containerHours);
+containerHours.innerHTML = '00';
+paragrafoDisplayCountdown.append(containerMinutes);
+containerMinutes.innerHTML = '00';
+paragrafoDisplayCountdown.append(containerSeconds);
+containerSeconds.innerHTML = '00';
+containerHours.after(paragrafoTwoPoints);
+containerMinutes.after(twoTwoPoints);
+
+
 
 //creato pulsanti all'interno del nodo countdown
-const pulsanteImposta = document.createElement("button");
 const pulsanteAvvia = document.createElement("button");
 const pulsanteStop = document.createElement("button");
 const pulsanteRefresh = document.createElement("button");
-pulsanteImposta.id = "imposta";
-pulsanteImposta.innerHTML = "Set";
 pulsanteAvvia.id = "avvia";
 pulsanteAvvia.className = "styleBottonPlayer";
 pulsanteAvvia.innerHTML = "Play";
@@ -71,6 +85,6 @@ circleTwentyFive.append(pulsanteTwentyFive);
 circleFive.append(pulsanteFive);
 
 containerBotton.prepend(pulsanteMeno, pulsanteReset, pulsantePiu);
-containerBotton.prepend(pulsanteAvvia, pulsanteImposta, pulsanteStop);
+containerBotton.prepend(pulsanteAvvia, pulsanteStop);
 containerBotton.append(pulsanteRefresh);
 
