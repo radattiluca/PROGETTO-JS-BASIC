@@ -1,6 +1,6 @@
 
 button{
-  background-color: red;
+  background-color: transparent;
   color: black;
   cursor: pointer;
   width: auto;
@@ -26,9 +26,8 @@ button{
   border-radius: 100px;
   color: black;
   cursor: pointer;
-  width: 80px;
-  height: 30px;
-  display: inline-block;
+  
+  display:block;
   margin: 5px;
   text-align: center;
   text-decoration: none;
