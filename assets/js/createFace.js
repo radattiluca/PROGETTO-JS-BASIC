@@ -20,10 +20,13 @@ const pulsantePiu = document.createElement("button");
 const pulsanteReset = document.createElement("button");
 const pulsanteMeno = document.createElement("button");
 pulsantePiu.id = "plus";
+pulsantePiu.className = "styleBottonPlayer";
 pulsantePiu.innerHTML = "+";
 pulsanteReset.id = "reset";
+pulsanteReset.className = "styleBottonPlayer";
 pulsanteReset.innerHTML = "Reset";
 pulsanteMeno.id = "minus";
+pulsanteMeno.className = "styleBottonPlayer";
 pulsanteMeno.innerHTML = "-";
 
 
@@ -44,8 +47,10 @@ const pulsanteRefresh = document.createElement("button");
 pulsanteImposta.id = "imposta";
 pulsanteImposta.innerHTML = "Set";
 pulsanteAvvia.id = "avvia";
+pulsanteAvvia.className = "styleBottonPlayer";
 pulsanteAvvia.innerHTML = "Play";
 pulsanteStop.id = "stopTimer";
+pulsanteStop.className = "styleBottonPlayer";
 pulsanteStop.innerHTML = "Stop";
 pulsanteRefresh.id = "refresh";
 pulsanteRefresh.className = "refreshStyle";
@@ -60,13 +65,12 @@ pulsanteFive.id = "bottonFive";
 pulsanteFive.innerHTML = "5'";
 
 const containerBotton = document.querySelector("#row-botton");
-const circleContAnairBotton = document.querySelector("#countAiner");
-const circleCountDownAiner = document.querySelector("#countDownAiner");
 const circleTwentyFive = document.querySelector("#twentyFive");
 const circleFive = document.querySelector("#five");
-
-circleContAnairBotton.append(pulsanteMeno, pulsanteReset, pulsantePiu);
-circleCountDownAiner.after(pulsanteRefresh);
-circleCountDownAiner.append(pulsanteAvvia, pulsanteImposta, pulsanteStop);
 circleTwentyFive.append(pulsanteTwentyFive);
 circleFive.append(pulsanteFive);
+
+containerBotton.prepend(pulsanteMeno, pulsanteReset, pulsantePiu);
+containerBotton.prepend(pulsanteAvvia, pulsanteImposta, pulsanteStop);
+containerBotton.append(pulsanteRefresh);
+
