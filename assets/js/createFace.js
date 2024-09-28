@@ -41,18 +41,23 @@ const paragrafoTwoPoints = document.createElement('span');
 const twoTwoPoints = paragrafoTwoPoints.cloneNode(true);
 paragrafoDisplayCountdown.className = "display";
 paragrafoDisplayCountdown.id = "display-countdown";
+//id creati solo per i minuti e i secondi, le ore non ci serviranno nell'esecuzione del codice
+containerMinutes.id = "displayMinutes";
+containerSeconds.id = "displaySeconds";
 paragrafoTwoPoints.className = "styleTwoPoints";
 paragrafoTwoPoints.innerHTML = ':';
 twoTwoPoints.innerHTML = ':';
 divContenitoreCountdown.prepend(paragrafoDisplayCountdown);
 paragrafoDisplayCountdown.append(containerHours);
 containerHours.innerHTML = '00';
+containerHours.after(paragrafoTwoPoints);
 paragrafoDisplayCountdown.append(containerMinutes);
 containerMinutes.innerHTML = '00';
+containerMinutes.after(twoTwoPoints);
 paragrafoDisplayCountdown.append(containerSeconds);
 containerSeconds.innerHTML = '00';
-containerHours.after(paragrafoTwoPoints);
-containerMinutes.after(twoTwoPoints);
+
+
 
 
 

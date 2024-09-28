@@ -1,6 +1,7 @@
 "use strict";
 
-const backTime = document.querySelector('#display-countdown');
+const backTimeMinutes = document.querySelector('#displayMinutes');
+const backTimeSeconds = document.querySelector('#displaySeconds');
 const start = document.querySelector('#avvia');
 const set = document.querySelector('#bottonTwentyFive');
 const seTwo = document.querySelector('#bottonFive');
@@ -8,10 +9,13 @@ const stopCountDown = document.querySelector('#stopTimer');
 const azzera = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows")
 
-backTime.textContent="0";
+//backTime.textContent="0";
 //mettere un eventprevent per bloccare l'esecuzione del ciclo di 5 min se si preme insieme a quello di 25
 set.addEventListener('click', function questionSecond(){
-    let timeDown = 25;
+
+    let timeDown = 1500;
+    backTimeMinutes = "25";
+    /*let timeDown = 25;
     backTime.textContent = timeDown;
 
     start.addEventListener('click', function startCount(){
@@ -36,7 +40,7 @@ set.addEventListener('click', function questionSecond(){
         stopCountDown.addEventListener('click', function(){
             start.innerHTML = "Replay";
             clearInterval(mytimer);
-        });    
+        }); */   
     });
 });
 

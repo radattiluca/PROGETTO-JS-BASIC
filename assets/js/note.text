@@ -1,0 +1,7 @@
+Sto cercando di creare il countdown con 3 div separati che vanno a suddividere ore minuti e secondi
+adesso sto settando la funzione dell'evento impostato su 25 minuti, quando il client clicca su 25 va a schermo 25 ma deve iniziare a scalare i secondi ovvero:
+
+backTimeSeconds === 0 TRUE
+inserisci altri sessanta secondi e diminuisci a 24 il backTimeMinutes
+ 
+ e così via fino ad arrivare a 0.
