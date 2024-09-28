@@ -11,6 +11,7 @@ const imageArrows = document.querySelector("#circleArrows")
 
 //backTime.textContent="0";
 //mettere un eventprevent per bloccare l'esecuzione del ciclo di 5 min se si preme insieme a quello di 25
+/*
 set.addEventListener('click', function questionSecond(){
 
     let timeDown = 1500;
@@ -41,8 +42,8 @@ set.addEventListener('click', function questionSecond(){
             start.innerHTML = "Replay";
             clearInterval(mytimer);
         }); */   
-    });
-});
+   // });
+//});
 
 seTwo.addEventListener('click', function questionSecond(){
     let timeDown = 5;
