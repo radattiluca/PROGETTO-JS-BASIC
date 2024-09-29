@@ -42,6 +42,7 @@ const twoTwoPoints = paragrafoTwoPoints.cloneNode(true);
 paragrafoDisplayCountdown.className = "display";
 paragrafoDisplayCountdown.id = "display-countdown";
 //id creati solo per i minuti e i secondi, le ore non ci serviranno nell'esecuzione del codice
+containerHours.id = "displayHours";
 containerMinutes.id = "displayMinutes";
 containerSeconds.id = "displaySeconds";
 paragrafoTwoPoints.className = "styleTwoPoints";
