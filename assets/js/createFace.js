@@ -71,7 +71,7 @@ pulsanteAvvia.className = "styleBottonPlayer";
 pulsanteAvvia.innerHTML = "Play";
 pulsanteStop.id = "stopTimer";
 pulsanteStop.className = "styleBottonPlayer";
-pulsanteStop.innerHTML = "Stop";
+pulsanteStop.innerHTML = "Pause";
 pulsanteRefresh.id = "refresh";
 pulsanteRefresh.className = "refreshStyle";
 pulsanteRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
