@@ -11,6 +11,17 @@ const stopCountDown = document.querySelector('#stopTimer');
 const azzera = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 
+let finishTimer = function(){
+    setTimeout(function(){
+                
+        let flashing1 = setInterval(function() {
+        flashingDisplay.style.color = "#8f8288"},1000);
+        
+        let flashing2 =  setInterval(function() {
+        flashingDisplay.style.color = ""},2000);
+        setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
+    }, 58000);
+};
 
 
 //let dontStopMeNow = function(){};
@@ -40,15 +51,7 @@ set.addEventListener('click', function questionSecond(){
             }
             
             if (timeMinutes <= 0) {
-                setTimeout(function(){
-                
-                    let flashing1 = setInterval(function() {
-                    flashingDisplay.style.color = "#8f8288"},1000);
-                    
-                    let flashing2 =  setInterval(function() {
-                    flashingDisplay.style.color = ""},2000);
-                    setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
-                }, 58000);
+                finishTimer();
             }
         }, 60000);
 

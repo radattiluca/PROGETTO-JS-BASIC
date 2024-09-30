@@ -1,0 +1,31 @@
+
+.headerStyle{
+    
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    color: #d5303e; //red tomate
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 300; 
+    
+}
+
+.containerTomateSlice{
+    margin: auto;
+
+    .tomateSlice{
+        width: 40px;
+        background-color: #d5303e; //red tomate
+        border-radius: 60px;
+        border: 2px solid #d5303e; //red tomate
+        margin: 10px;
+    }
+}
+
+
+
+

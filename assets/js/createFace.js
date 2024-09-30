@@ -28,6 +28,7 @@ pulsanteReset.innerHTML = "Reset";
 pulsanteMeno.id = "minus";
 pulsanteMeno.className = "styleBottonPlayer";
 pulsanteMeno.innerHTML = "-";
+paragrafoDisplayCounter.after(pulsanteMeno, pulsanteReset, pulsantePiu);
 
 
 
@@ -73,7 +74,8 @@ pulsanteStop.id = "stopTimer";
 pulsanteStop.className = "styleBottonPlayer";
 pulsanteStop.innerHTML = "Pause";
 pulsanteRefresh.id = "refresh";
-pulsanteRefresh.className = "refreshStyle";
+pulsanteRefresh.className = "refreshStyle styleBottonPlayer";
+paragrafoDisplayCountdown.after(pulsanteAvvia, pulsanteStop);
 pulsanteRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
 
 //creato pulsanti 25" e 5"
@@ -89,8 +91,5 @@ const circleTwentyFive = document.querySelector("#twentyFive");
 const circleFive = document.querySelector("#five");
 circleTwentyFive.append(pulsanteTwentyFive);
 circleFive.append(pulsanteFive);
-
-containerBotton.prepend(pulsanteMeno, pulsanteReset, pulsantePiu);
-containerBotton.prepend(pulsanteAvvia, pulsanteStop);
 containerBotton.append(pulsanteRefresh);
 
