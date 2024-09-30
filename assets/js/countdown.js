@@ -11,15 +11,7 @@ const stopCountDown = document.querySelector('#stopTimer');
 const azzera = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 
-let finishTimer = setTimeout(function(){
-                
-    let flashing1 = setInterval(function() {
-    flashingDisplay.style.color = "#8f8288"},1000);
-    
-    let flashing2 =  setInterval(function() {
-    flashingDisplay.style.color = ""},2000);
-    setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
-}, 58000);
+
 
 //let dontStopMeNow = function(){};
 
@@ -28,7 +20,7 @@ let finishTimer = setTimeout(function(){
 //start of section interval 25 minutes
 set.addEventListener('click', function questionSecond(){
 
-    let timeMinutes = 25; 
+    let timeMinutes = 24; 
     let timeSecond = 60;
     backTimeMinutes.textContent = "25";
     
@@ -48,7 +40,15 @@ set.addEventListener('click', function questionSecond(){
             }
             
             if (timeMinutes <= 0) {
-                finishTimer();
+                setTimeout(function(){
+                
+                    let flashing1 = setInterval(function() {
+                    flashingDisplay.style.color = "#8f8288"},1000);
+                    
+                    let flashing2 =  setInterval(function() {
+                    flashingDisplay.style.color = ""},2000);
+                    setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
+                }, 58000);
             }
         }, 60000);
 
@@ -81,7 +81,7 @@ set.addEventListener('click', function questionSecond(){
 
 //start of section interval 5 minutes
 seTwo.addEventListener('click', function questionSecond(){
-    let timeMinutes = 5;
+    let timeMinutes = 4;
     let timeSecond = 60;
     backTimeMinutes.textContent = "05";
 
