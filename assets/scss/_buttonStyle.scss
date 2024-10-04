@@ -1,7 +1,7 @@
 
 button{
   background-color: transparent;
-  color: #3c4043;
+  color: #26252d;
   cursor: pointer;
   width: auto;
   display: block;
@@ -23,46 +23,40 @@ button{
 .styleBottonPlayer{
   background-color: #d5303e; //red tomate
   width: 60px;
-  margin: 2px 2px 2px 2px;
-  
+  margin: 10px 2px 2px 2px;
   align-items: center;
-  appearance: none;
   border-radius: 24px;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
-  color: #3c4043;
   cursor: pointer;
   display: inline-flex;
-  fill: currentcolor;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   height: 30px;
   justify-content: center;
-  letter-spacing: .25px;
-  line-height: normal;
-  
-  overflow: visible;
   position: relative;
   text-align: center;
-  text-transform: none;
-  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  will-change: transform,opacity;
-  z-index: 0;
 }
 
-
-//capire se si può agire con il relativo e il relativo assoluto
-.groupBotton{
-  display: flex;
-  width: 60px;
-  height: 60px;
-  background-color: #d5303e; //red tomate
-  border-radius: 120px;
-  margin: 15px auto 15px auto;
-  padding: 10px 0 10px 0;
+.containerGroupButton{
+  width: 80px;
+  background-color: #26252d;
+  border-radius: 5px;
+  padding: 30px 0 49px 0;
+  margin: auto;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px -2px 4px, rgba(0, 0, 0, 0.3) 0px -7px 13px -3px, rgba(0, 0, 0, 0.034) 0px 3px 0px inset;
+  
+    .groupBotton{
+      display: flex;
+      width: 60px;
+      height: 60px;
+      background-color: #d5303e; //red tomate
+      border-radius: 120px;
+      margin: 15px auto 15px auto;
+      padding: 10px 0 10px 0;
+    }
 }
+
 
 
