@@ -32,7 +32,17 @@
     .styleBottonPlayer{
         width: 120px;
         font-size: 1.5em;
+        margin-right: 20px;
+            &:hover {
+                box-shadow: rgba(196, 148, 156, 0.904) 0 -25px 18px -14px inset,rgba(196, 148, 156,.25) 0 1px 2px,rgba(196, 148, 156,.25) 0 2px 4px,rgba(196, 148, 156,.25) 0 4px 8px,rgba(196, 148, 156,.25) 0 8px 16px,rgba(196, 148, 156,.25) 0 16px 32px;
+                transform: scale(1.05);
+            }
     }
+
+    .refreshStyle{
+        margin-right: 0 !important; 
+    }
+
 
     .containerGroupButton{
         width: 160px;
@@ -42,6 +52,11 @@
                 width: 120px;
                 height: 120px;
                 border-radius: 240px;
+
+                &:hover {
+                    box-shadow: rgba(213, 48, 62, 0.904) 0 -25px 18px -14px inset,rgba(234, 27, 45,.25) 0 1px 2px,rgba(234, 27, 45,.25) 0 2px 4px,rgba(234, 27, 45,.25) 0 4px 8px,rgba(234, 27, 45,.25) 0 8px 16px,rgba(234, 27, 45,.25) 0 16px 32px;
+                    transform: scale(1.05) rotate(-1deg);
+                }
             }
 
             button{
@@ -53,3 +68,5 @@
 
   
 }
+
+

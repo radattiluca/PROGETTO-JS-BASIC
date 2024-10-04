@@ -7,3 +7,10 @@
 -non ho ancora messo mano sul codice per bloccare qualsiasi tentativo da parte dell'utente di avviare un nuovo pomodoro quando è in esecuzione l'altro.
 
 ce la puoi fare cazzzo
+
+4/10
+
+- sistemato le media query per il responsive design
+
+ATTENZIONE quando avvio il timer e premo pausa, nel momento in cui ripremo sul tasto replay viene sovrascritto il display con il numero 4 
+
