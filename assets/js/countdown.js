@@ -1,14 +1,13 @@
 "use strict";
-
 const backTimeHours = document.querySelector('#displayHours');
 const backTimeMinutes = document.querySelector('#displayMinutes');
 const backTimeSeconds = document.querySelector('#displaySeconds');
 const flashingDisplay = document.querySelector('#display-countdown');
-const start = document.querySelector('#avvia');
-const set = document.querySelector('#bottonTwentyFive');
-const seTwo = document.querySelector('#bottonFive');
+const start = document.querySelector('#play');
+const set = document.querySelector('#buttonTwentyFive');
+const seTwo = document.querySelector('#buttonFive');
 const stopCountDown = document.querySelector('#stopTimer');
-const azzera = document.querySelector("#refresh");
+const resetPage = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 
 let finishTimer = function(){
@@ -132,6 +131,6 @@ seTwo.addEventListener('click', function questionSecond(){
 });
 //finish of section interval 5 minutes
 
-azzera.addEventListener('click', function(){
+resetPage.addEventListener('click', function(){
     location.reload() 
 });

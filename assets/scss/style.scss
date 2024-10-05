@@ -1,6 +1,7 @@
 @import 'buttonStyle';
 @import 'headerStyle';
 
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -23,7 +24,7 @@ body{
 }
   
 
-#row-botton{
+#row-button{
     /*used to position buttons to the right of displays.
     The element will start on row 1 and column 2 and span 3 rows and 1 column*/
     grid-area: 1 / 2 / span 3 / span 1;
