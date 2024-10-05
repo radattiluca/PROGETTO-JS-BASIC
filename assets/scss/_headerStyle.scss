@@ -16,6 +16,8 @@
 
 .containerTomateSlice{
     margin: auto;
+    display: flex;
+    justify-content: end;
 
     .tomateSlice{
         width: 40px;

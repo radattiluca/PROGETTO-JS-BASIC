@@ -11,6 +11,8 @@ ce la puoi fare cazzzo
 4/10
 
 - sistemato le media query per il responsive design
+- sistemare i nomi da botton a button
+- il favicon non funziona 
 
 ATTENZIONE quando avvio il timer e premo pausa, nel momento in cui ripremo sul tasto replay viene sovrascritto il display con il numero 4 
 
