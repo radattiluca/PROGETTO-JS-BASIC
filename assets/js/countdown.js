@@ -10,7 +10,7 @@ const stopCountDown = document.querySelector('#stopTimer');
 const resetPage = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 
-let finishTimer = function(){
+/*let finishTimer = function(){
     setTimeout(function(){
                 
         let flashing1 = setInterval(function() {
@@ -20,7 +20,7 @@ let finishTimer = function(){
         flashingDisplay.style.color = ""},2000);
         setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
     }, 54000);
-};
+};*/
 
 
 //mettere un eventprevent per bloccare l'esecuzione del ciclo di 5 min se si preme insieme a quello di 25
@@ -47,9 +47,6 @@ set.addEventListener('click', function questionSecond(){
                 backTimeMinutes.textContent= timeMinutes;
             }
             
-            if (timeMinutes <= 0) {
-                finishTimer();
-            }
         }, 60000);
 
         let timerSeconds = setInterval (function(){
@@ -62,7 +59,11 @@ set.addEventListener('click', function questionSecond(){
                 backTimeSeconds.textContent= timeSecond;
             }
 
-            if(timeSecond <=0){
+            if(timeMinutes < 0){ //quando il timer dei minuti va a -1 il codice blocca il countdown e sovrascrive il numero -1 con la stringa 00
+                backTimeMinutes.textContent= "00";
+                clearInterval(timerSeconds);
+                clearInterval(timeMinutes);
+            }else if(timeSecond <=0){ // 
                 timeSecond = 60;
                 timerSeconds();
             }  
@@ -92,10 +93,6 @@ seTwo.addEventListener('click', function questionSecond(){
        
             timeMinutes--;
             backTimeMinutes.textContent= `0${timeMinutes}`;
-            
-            if (timeMinutes <= 0) {
-                    finishTimer();
-                }
             }, 60000);
 
         let timerSeconds = setInterval (function(){
@@ -108,8 +105,11 @@ seTwo.addEventListener('click', function questionSecond(){
                 backTimeSeconds.textContent= timeSecond;
             }
             
-            
-            if(timeSecond <=0){
+            if(timeMinutes < 0){
+                backTimeMinutes.textContent= "00";
+                clearInterval(timerSeconds);
+                clearInterval(timeMinutes);
+            }else if(timeSecond <=0){
                 timeSecond = 60;
                 timerSeconds();
             }  
