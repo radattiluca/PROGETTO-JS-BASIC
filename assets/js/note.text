@@ -1,8 +1,7 @@
 
 - ricontrollare il countdown, la funzione finishTimer non funziona bene e nemmeno la funzione dontStopMeNow.
 
-- ho iniziato a cambiare lo stile della versione mobile, sto giocando con i pulsanti per avere una bella interfaccia,
-    non ci sono ancora!
+
 
 -non ho ancora messo mano sul codice per bloccare qualsiasi tentativo da parte dell'utente di avviare un nuovo pomodoro quando è in esecuzione l'altro.
 
@@ -10,9 +9,6 @@ ce la puoi fare cazzzo
 
 4/10
 
-- sistemato le media query per il responsive design
-- sistemare i nomi da botton a button
-- il favicon non funziona 
 
 ATTENZIONE quando avvio il timer e premo pausa, nel momento in cui ripremo sul tasto replay viene sovrascritto il display con il numero 4 
 

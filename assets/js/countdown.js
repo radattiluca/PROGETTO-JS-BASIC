@@ -19,11 +19,9 @@ let finishTimer = function(){
         let flashing2 =  setInterval(function() {
         flashingDisplay.style.color = ""},2000);
         setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
-    }, 58000);
+    }, 54000);
 };
 
-
-//let dontStopMeNow = function(){};
 
 //mettere un eventprevent per bloccare l'esecuzione del ciclo di 5 min se si preme insieme a quello di 25
 
@@ -37,7 +35,7 @@ set.addEventListener('click', function questionSecond(){
 
     start.addEventListener('click', function startCount(){
         
-        backTimeMinutes.textContent = "24"; //to show minute 24 and not minute 25 on the display
+        backTimeMinutes.textContent = timeMinutes; 
 
         let timerMinutes = setInterval(function() {
        
@@ -72,7 +70,6 @@ set.addEventListener('click', function questionSecond(){
         
         stopCountDown.addEventListener('click', function(){
             if(!(timeMinutes === 0)){
-                start.innerHTML = "Replay";
                 clearInterval(timerSeconds);
                 clearInterval(timerMinutes);
             }
@@ -83,14 +80,13 @@ set.addEventListener('click', function questionSecond(){
 
 //start of section interval 5 minutes
 seTwo.addEventListener('click', function questionSecond(){
-    let timeMinutes = 4;
+    let timeMinutes = 1;
     let timeSecond = 60;
     backTimeMinutes.textContent = "05";
 
     start.addEventListener('click', function startCount(){
         
-        backTimeMinutes.textContent = "04"; //to show minute 4 and not minute 5 on the display
-
+        backTimeMinutes.textContent = `0${timeMinutes}`;
 
         let timerMinutes = setInterval(function() {
        
@@ -121,7 +117,6 @@ seTwo.addEventListener('click', function questionSecond(){
         
         stopCountDown.addEventListener('click', function(){
             if(!(timeMinutes === 0)){
-                start.innerHTML = "Replay";
                 clearInterval(timerSeconds);
                 clearInterval(timerMinutes);
             }
