@@ -26,7 +26,7 @@ let finishTimer = function(){
 //mettere un eventprevent per bloccare l'esecuzione del ciclo di 5 min se si preme insieme a quello di 25
 
 //start of section interval 25 minutes
-set.addEventListener('click', function questionSecond(){
+set.addEventListener('click',function questionSecond(){
 
     let timeMinutes = 24; 
     let timeSecond = 60;
