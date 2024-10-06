@@ -10,7 +10,7 @@ const stopCountDown = document.querySelector('#stopTimer');
 const resetPage = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 
-/*let finishTimer = function(){
+let finishTimer = function(){
     setTimeout(function(){
                 
         let flashing1 = setInterval(function() {
@@ -18,9 +18,9 @@ const imageArrows = document.querySelector("#circleArrows");
         
         let flashing2 =  setInterval(function() {
         flashingDisplay.style.color = ""},2000);
-        setTimeout(() => { clearInterval(flashing1,flashing2); location.reload()}, 6000);
+        setTimeout(() => { clearInterval(flashing1,flashing2)}, 6000);
     }, 54000);
-};*/
+};
 
 
 //mettere un eventprevent per bloccare l'esecuzione del ciclo di 5 min se si preme insieme a quello di 25
@@ -46,6 +46,10 @@ set.addEventListener('click', function questionSecond(){
             }else{
                 backTimeMinutes.textContent= timeMinutes;
             }
+
+            if(timeMinutes==0){
+                finishTimer();
+            }
             
         }, 60000);
 
@@ -59,7 +63,7 @@ set.addEventListener('click', function questionSecond(){
                 backTimeSeconds.textContent= timeSecond;
             }
 
-            if(timeMinutes < 0){ //quando il timer dei minuti va a -1 il codice blocca il countdown e sovrascrive il numero -1 con la stringa 00
+            if(timeMinutes < 0){ 
                 backTimeMinutes.textContent= "00";
                 clearInterval(timerSeconds);
                 clearInterval(timeMinutes);
@@ -70,7 +74,8 @@ set.addEventListener('click', function questionSecond(){
         }, 1000);
         
         stopCountDown.addEventListener('click', function(){
-            if(!(timeMinutes === 0)){
+            //to freeze the pause button from running to less than a minute and avoid the execution of finishTimer()
+            if(!(timeMinutes == 0)){
                 clearInterval(timerSeconds);
                 clearInterval(timerMinutes);
             }
@@ -81,7 +86,7 @@ set.addEventListener('click', function questionSecond(){
 
 //start of section interval 5 minutes
 seTwo.addEventListener('click', function questionSecond(){
-    let timeMinutes = 1;
+    let timeMinutes = 4;
     let timeSecond = 60;
     backTimeMinutes.textContent = "05";
 
@@ -93,7 +98,12 @@ seTwo.addEventListener('click', function questionSecond(){
        
             timeMinutes--;
             backTimeMinutes.textContent= `0${timeMinutes}`;
-            }, 60000);
+            
+            if(timeMinutes==0){
+                finishTimer();
+            }
+
+        }, 60000);
 
         let timerSeconds = setInterval (function(){
             
@@ -116,7 +126,8 @@ seTwo.addEventListener('click', function questionSecond(){
         }, 1000);
         
         stopCountDown.addEventListener('click', function(){
-            if(!(timeMinutes === 0)){
+            //to freeze the pause button from running to less than a minute and avoid the execution of finishTimer()
+            if(!(timeMinutes === 0)){ 
                 clearInterval(timerSeconds);
                 clearInterval(timerMinutes);
             }
