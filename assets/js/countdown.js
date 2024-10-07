@@ -10,6 +10,7 @@ const stopCountDown = document.querySelector('#stopTimer');
 const resetPage = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 
+
 let finishTimer = function(){
     setTimeout(function(){
                 
@@ -27,14 +28,13 @@ let finishTimer = function(){
 
 //start of section interval 25 minutes
 set.addEventListener('click',function questionSecond(){
-
     let timeMinutes = 24; 
     let timeSecond = 60;
     backTimeMinutes.textContent = "25";
     
 
     start.addEventListener('click', function startCount(){
-        
+        seTwo.disabled=true;
         backTimeMinutes.textContent = timeMinutes; 
 
         let timerMinutes = setInterval(function() {
@@ -86,12 +86,13 @@ set.addEventListener('click',function questionSecond(){
 
 //start of section interval 5 minutes
 seTwo.addEventListener('click', function questionSecond(){
+    
     let timeMinutes = 4;
     let timeSecond = 60;
     backTimeMinutes.textContent = "05";
 
     start.addEventListener('click', function startCount(){
-        
+        set.disabled=true;
         backTimeMinutes.textContent = `0${timeMinutes}`;
 
         let timerMinutes = setInterval(function() {
