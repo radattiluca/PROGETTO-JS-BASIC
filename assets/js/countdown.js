@@ -6,6 +6,7 @@ const flashingDisplay = document.querySelector('#display-countdown');
 const start = document.querySelector('#play');
 const set = document.querySelector('#buttonTwentyFive');
 const seTwo = document.querySelector('#buttonFive');
+const breakLong = document.querySelector('#buttonFifteen');
 const stopCountDown = document.querySelector('#stopTimer');
 const resetPage = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
@@ -147,6 +148,65 @@ seTwo.addEventListener('click', function questionSecond(){
 });
 //finish of section interval 5 minutes
 
+//start of section break long 15 minutes
+breakLong.addEventListener('click', function questionSecond(){
+    
+    let timeMinutes = 14;
+    let timeSecond = 60;
+    backTimeMinutes.textContent = "15";
+
+    start.addEventListener('click', function startCount(){
+        set.disabled=true; //to not start the set code if the user clicks on button 25 while the seTwo code is running
+        seTwo.disabled=true;
+
+        if(timeMinutes==14){
+            setTimeout(() => {
+                backTimeMinutes.textContent= timeMinutes; 
+            }, 999);
+        };
+
+        let timerMinutes = setInterval(function() {
+       
+            timeMinutes--;
+            backTimeMinutes.textContent=timeMinutes;
+            
+            if(timeMinutes==0){
+                finishTimer();
+            }
+
+        }, 60000);
+
+        let timerSeconds = setInterval (function(){
+            
+            timeSecond--;
+            
+            if(timeSecond <=9){
+                backTimeSeconds.textContent= `0${timeSecond}`; 
+            }else{
+                backTimeSeconds.textContent= timeSecond;
+            }
+            
+            if(timeMinutes < 0){
+                backTimeMinutes.textContent= "00";
+                clearInterval(timerSeconds);
+                clearInterval(timerMinutes);
+            }else if(timeSecond <=0){
+                timeSecond = 60;
+                timerSeconds();
+            }  
+        }, 1000);
+        
+        stopCountDown.addEventListener('click', function(){
+            //to freeze the pause button from running to less than a minute and avoid the execution of finishTimer()
+            if(!(timeMinutes === 0)){ 
+                clearInterval(timerSeconds);
+                clearInterval(timerMinutes);
+            }
+        });    
+    });
+
+});
+//finish of section break long 15'
 resetPage.addEventListener('click', function(){
     location.reload();
 });

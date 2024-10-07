@@ -78,17 +78,32 @@ pushRefresh.className = "refreshStyle styleButtonPlayer";
 paragraphDisplayCountdown.after(pushPlay, pushStop);
 pushRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
 
-//created 25" and 5" buttons
+//created 25", 15" and 5" buttons
 const pushTwentyFive = document.createElement("button");
 pushTwentyFive.id = "buttonTwentyFive";
 pushTwentyFive.innerHTML = "25'";
 const pushFive = document.createElement("button");
 pushFive.id = "buttonFive";
 pushFive.innerHTML = "5'";
+const pushFifteen = document.createElement("button");
+pushFifteen.id = "buttonFifteen";
+pushFifteen.innerHTML = "15'";
 const containerBotton = document.querySelector("#row-button");
 const circleTwentyFive = document.querySelector("#twentyFive");
 const circleFive = document.querySelector("#five");
-circleTwentyFive.append(pushTwentyFive);
-circleFive.append(pushFive);
+const circleFifteen = document.querySelector("#fifteen");
+
+const paragraphTwentyFive = document.createElement("p");
+const paragraphFive = document.createElement("p");
+const paragraphFifteen = document.createElement("p");
+paragraphTwentyFive.innerHTML = "Pomodoro";
+paragraphFive.innerHTML = "Short Break";
+paragraphFifteen.innerHTML = "Long Break";
+
+circleTwentyFive.append(pushTwentyFive, paragraphTwentyFive);
+circleFive.append(pushFive, paragraphFive);
+circleFifteen.append(pushFifteen, paragraphFifteen);
 containerBotton.append(pushRefresh);
+
+
 
