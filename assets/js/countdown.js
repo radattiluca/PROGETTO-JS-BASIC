@@ -32,8 +32,14 @@ set.addEventListener('click',function questionSecond(){
     
 
     start.addEventListener('click', function startCount(){
-        seTwo.disabled=true;
-        backTimeMinutes.textContent = timeMinutes; 
+        seTwo.disabled=true;//to not start the seTwo code if the user clicks on button 25 while the set code is running
+        
+        if(timeMinutes==24){
+            setTimeout(() => {
+                backTimeMinutes.textContent= timeMinutes; 
+            }, 999);
+        };
+
 
         let timerMinutes = setInterval(function() {
        
@@ -90,8 +96,13 @@ seTwo.addEventListener('click', function questionSecond(){
     backTimeMinutes.textContent = "05";
 
     start.addEventListener('click', function startCount(){
-        set.disabled=true;
-        backTimeMinutes.textContent = `0${timeMinutes}`;
+        set.disabled=true; //to not start the set code if the user clicks on button 25 while the seTwo code is running
+        
+        if(timeMinutes==4){
+            setTimeout(() => {
+                backTimeMinutes.textContent= `0${timeMinutes}` 
+            }, 999);
+        };
 
         let timerMinutes = setInterval(function() {
        
@@ -137,5 +148,5 @@ seTwo.addEventListener('click', function questionSecond(){
 //finish of section interval 5 minutes
 
 resetPage.addEventListener('click', function(){
-    location.reload() 
+    location.reload();
 });
