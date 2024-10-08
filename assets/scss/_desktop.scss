@@ -67,6 +67,12 @@
                 &:active{
                     transform: translateY(4px);
                 }
+
+                p{
+                    font-size: 0.8em;
+                    font-weight: 400;
+                    margin-bottom: -10px;
+                }
             }
 
             button{
