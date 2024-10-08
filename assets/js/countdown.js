@@ -26,13 +26,13 @@ let finishTimer = function(){
 
 
 //start of section interval 25 minutes
-set.addEventListener('click',function questionSecond(){
+set.addEventListener('click',function setTwentyFive(){
     let timeMinutes = 24; 
     let timeSecond = 60;
     backTimeMinutes.textContent = "25";
     
 
-    start.addEventListener('click', function startCount(){
+    start.addEventListener('click', function startCountDown(){
         seTwo.disabled=true;//to not start the seTwo code if the user clicks on button 25 while the set code is running
         
         if(timeMinutes==24){
@@ -90,13 +90,13 @@ set.addEventListener('click',function questionSecond(){
 //finish of section interval 25 minutes
 
 //start of section interval 5 minutes
-seTwo.addEventListener('click', function questionSecond(){
+seTwo.addEventListener('click', function setFive(){
     
     let timeMinutes = 4;
     let timeSecond = 60;
     backTimeMinutes.textContent = "05";
 
-    start.addEventListener('click', function startCount(){
+    start.addEventListener('click', function startCountDown(){
         set.disabled=true; //to not start the set code if the user clicks on button 25 while the seTwo code is running
         
         if(timeMinutes==4){
@@ -149,13 +149,13 @@ seTwo.addEventListener('click', function questionSecond(){
 //finish of section interval 5 minutes
 
 //start of section break long 15 minutes
-breakLong.addEventListener('click', function questionSecond(){
+breakLong.addEventListener('click', function setFifteen(){
     
     let timeMinutes = 14;
     let timeSecond = 60;
     backTimeMinutes.textContent = "15";
 
-    start.addEventListener('click', function startCount(){
+    start.addEventListener('click', function startCountDown(){
         set.disabled=true; //to not start the set code if the user clicks on button 25 while the seTwo code is running
         seTwo.disabled=true;
 
@@ -167,9 +167,12 @@ breakLong.addEventListener('click', function questionSecond(){
 
         let timerMinutes = setInterval(function() {
        
-            timeMinutes--;
-            backTimeMinutes.textContent=timeMinutes;
-            
+            if(timeMinutes <=9){
+                backTimeMinutes.textContent= `0${timeMinutes}`; 
+            }else{
+                backTimeMinutes.textContent= timeMinutes;
+            }
+
             if(timeMinutes==0){
                 finishTimer();
             }
