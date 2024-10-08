@@ -96,13 +96,10 @@ const circleFifteen = document.querySelector("#fifteen");
 const paragraphTwentyFive = document.createElement("p");
 const paragraphFive = document.createElement("p");
 const paragraphFifteen = document.createElement("p");
-paragraphTwentyFive.innerHTML = "Pomodoro";
-paragraphFive.innerHTML = "Short Break";
-paragraphFifteen.innerHTML = "Long Break";
 
-circleTwentyFive.append(pushTwentyFive, paragraphTwentyFive);
-circleFive.append(pushFive, paragraphFive);
-circleFifteen.append(pushFifteen, paragraphFifteen);
+circleTwentyFive.append(pushTwentyFive);
+circleFive.append(pushFive);
+circleFifteen.append(pushFifteen);
 containerBotton.append(pushRefresh);
 
 
