@@ -1,9 +1,8 @@
 
 .headerStyle{
-    
     width: 100%;
     height: 60px;
-    background-color: #121212;
+    background-color: #1f1e23; //Dark grayish blue
     color: #d5303e; //red tomate
     display: grid;
     grid-template-columns: auto auto;
@@ -11,7 +10,6 @@
     align-items: center;
     font-family: "Public Sans", sans-serif;
     font-weight: 300; 
-    
 }
 
 .containerTomatoSlice{
@@ -21,8 +19,7 @@
 
     .tomatoSlice{
         width: 40px;
-        background-color: white;
-        border-radius: 60px;
+        border-radius: 80px;
         margin: 10px;
     }
 }

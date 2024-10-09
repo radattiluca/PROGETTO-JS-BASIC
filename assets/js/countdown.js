@@ -156,17 +156,19 @@ breakLong.addEventListener('click', function setFifteen(){
     backTimeMinutes.textContent = "15";
 
     start.addEventListener('click', function startCountDown(){
-        set.disabled=true; //to not start the set code if the user clicks on button 25 while the seTwo code is running
-        seTwo.disabled=true;
-
+        seTwo.disabled=true;//to not start the seTwo code if the user clicks on button 25 while the set code is running
+        
         if(timeMinutes==14){
             setTimeout(() => {
                 backTimeMinutes.textContent= timeMinutes; 
             }, 999);
         };
 
+
         let timerMinutes = setInterval(function() {
        
+        timeMinutes--;
+
             if(timeMinutes <=9){
                 backTimeMinutes.textContent= `0${timeMinutes}`; 
             }else{
@@ -176,24 +178,24 @@ breakLong.addEventListener('click', function setFifteen(){
             if(timeMinutes==0){
                 finishTimer();
             }
-
+            
         }, 60000);
 
         let timerSeconds = setInterval (function(){
-            
             timeSecond--;
-            
+            backTimeSeconds.textContent= timeSecond;
+
             if(timeSecond <=9){
                 backTimeSeconds.textContent= `0${timeSecond}`; 
             }else{
                 backTimeSeconds.textContent= timeSecond;
             }
-            
-            if(timeMinutes < 0){
+
+            if(timeMinutes < 0){ 
                 backTimeMinutes.textContent= "00";
                 clearInterval(timerSeconds);
-                clearInterval(timerMinutes);
-            }else if(timeSecond <=0){
+                clearInterval(timeMinutes);
+            }else if(timeSecond <=0){ 
                 timeSecond = 60;
                 timerSeconds();
             }  
