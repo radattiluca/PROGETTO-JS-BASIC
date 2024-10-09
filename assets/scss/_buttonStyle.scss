@@ -1,7 +1,7 @@
 
 button{
   background-color: transparent;
-  color: #26252d;
+  color: $colorGreyishBlue;
   cursor: pointer;
   width: auto;
   display: block;
@@ -11,12 +11,12 @@ button{
   border: 0;
   border-radius: 50px;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: $weightFontButton;
 }
 
 
 .styleButtonPlayer{
-  background-color: #d5303e; //red tomate
+  background-color: $colorRedTomato;
   width: 60px;
   margin: 10px 2px 2px 2px;
   align-items: center;
@@ -26,7 +26,7 @@ button{
   cursor: pointer;
   display: inline-flex;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: $weightFontButton;
   height: 30px;
   justify-content: center;
   position: relative;
@@ -35,19 +35,19 @@ button{
 
 .containerGroupButton{
   width: 80px;
-  background-color: #26252d;
+  background-color: $colorGreyishBlue;
   border-radius: 5px;
   padding: 30px 0 30px 0;
   margin: auto;
   box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px -2px 4px, rgba(0, 0, 0, 0.3) 0px -7px 13px -3px, rgba(0, 0, 0, 0.034) 0px 3px 0px inset;
+  box-shadow: $boxShadowDisplay;
   
     .groupButton{
       display: flex;
       flex-direction: column-reverse;
       width: 60px;
       height: 60px;
-      background-color: #d5303e; //red tomate
+      background-color: $colorRedTomato;
       border-radius: 120px;
       margin: 15px auto 15px auto;
       padding: 10px 0 10px 0;

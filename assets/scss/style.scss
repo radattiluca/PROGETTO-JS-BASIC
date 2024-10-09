@@ -1,5 +1,6 @@
 @import 'buttonStyle';
 @import 'headerStyle';
+@import 'config';
 
 
 *{
@@ -9,9 +10,9 @@
 }
 
 body{
-    background-color: #26252d; //Greyish blue
-    font-family: "Public Sans", sans-serif;
-    font-weight: 300;
+    background-color: $colorGreyishBlue;
+    font-family: $fontStyle;
+    font-weight: $weightFont;
 }
 
 
@@ -43,11 +44,11 @@ body{
     height: 60px;
     border-radius: 5px;
     padding: 10px;
-    background-color:  #26252d;
-    color: #c4949c;
+    background-color: $colorGreyishBlue;
+    color: $colorLightPink;
     font-size: 2em;
     white-space: nowrap;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px -2px 4px, rgba(0, 0, 0, 0.3) 0px -7px 13px -3px, rgba(0, 0, 0, 0.034) 0px 3px 0px inset;
+    box-shadow: $boxShadowDisplay;
         &:hover{
             box-shadow: rgba(255, 228, 225, 0.56) 0px 0px 30px 4px;
         }
@@ -60,7 +61,7 @@ body{
 
 .refreshStyle{
     width: 50px;
-    font-weight: 700;
+    font-weight: $weightFontButton;
     font-size: 1.2em;
     vertical-align: bottom;
     text-align: center;
