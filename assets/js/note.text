@@ -7,13 +7,12 @@
 
 ce la puoi fare cazzzo
 
-9/10 problema sul tasto pausa, quando premo pausa si stoppa tutto perfettamente, ma quando riavvio il tempo, allo scadere dei 60 secondi i minuti non scalano ma rimangono sul numero dove è stato fermato il tempo.
-
-se metto pausa su 4 min e 56 e poi ripremo play quando arriva il punto in cui deve scalare i minuti non li scala, rimane a 4 min 
-
-se stoppo a 4 min e 57 il 4 viene scalato 3 secondi dopo la fine dei 60 secondi 
-se stoppo a 4 min e 55 viene scalato 5 secondi dopo
-teoria una volta stoppato il timer dei minuti ricomincia dai 60 secondi e non da dove è stato stoppato
+4/10
 
 
+ATTENZIONE quando avvio il timer e premo pausa, nel momento in cui ripremo sul tasto replay viene sovrascritto il display con il numero 4 
 
+il codice funziona, devo risolvere il la fine del timer ma funziona.
+non ho provato con il codice finishTimer.
+
+lo style del logo è giusto in main e non in devstyle
