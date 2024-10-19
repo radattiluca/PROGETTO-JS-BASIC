@@ -13,7 +13,6 @@ const imageArrows = document.querySelector("#circleArrows");
 
 
 let finishTimer = function(){
-    setTimeout(function(){
                 
         let flashing1 = setInterval(function() {
         flashingDisplay.style.color = "#8f8288"},1000);
@@ -22,7 +21,6 @@ let finishTimer = function(){
         flashingDisplay.style.color = ""},2000);
 
         setTimeout(() => { clearInterval(flashing1,flashing2)}, 6000);
-    }, 53000);
 };
 
 
@@ -47,8 +45,8 @@ set.addEventListener('click',function setTwentyFive(){
                 backTimeSeconds.textContent= timeSecond;
             };
 
-            if (timeMinutes==0){
-                finishTimer(); //non funziona correttamente
+            if (timeMinutes==0 && timeSecond == 5){
+                finishTimer();
             };
 
             if(timeMinutes==24){
@@ -57,6 +55,8 @@ set.addEventListener('click',function setTwentyFive(){
 
             if(timeMinutes < 0){
                 clearInterval(timerSeconds);
+                backTimeMinutes.textContent= "00";
+                backTimeSeconds.textContent= "00";
                 
             }else if(timeSecond <=0){
                 timeSecond = 60;
@@ -97,7 +97,7 @@ seTwo.addEventListener('click', function setFive(){
                 backTimeSeconds.textContent= timeSecond;
             };
 
-            if (timeMinutes==0){
+            if (timeMinutes==0 && timeSecond == 5){
                 finishTimer(); 
             };
 
@@ -151,7 +151,7 @@ breakLong.addEventListener('click', function setFifteen(){
                 backTimeSeconds.textContent= timeSecond;
             };
 
-            if (timeMinutes==0){
+            if (timeMinutes==0 && timeSecond == 5){
                 finishTimer(); 
             };
 
