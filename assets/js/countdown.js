@@ -48,7 +48,7 @@ set.addEventListener('click',function setTwentyFive(){
             };
 
             if (timeMinutes==0){
-                finishTimer(); 
+                finishTimer(); //non funziona correttamente
             };
 
             if(timeMinutes==24){
