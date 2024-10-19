@@ -57,8 +57,6 @@ set.addEventListener('click',function setTwentyFive(){
 
             if(timeMinutes < 0){
                 clearInterval(timerSeconds);
-                backTimeMinutes.textContent= "00";
-                backTimeSeconds.textContent= "00";
                 
             }else if(timeSecond <=0){
                 timeSecond = 60;
