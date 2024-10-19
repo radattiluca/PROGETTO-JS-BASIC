@@ -52,7 +52,7 @@ set.addEventListener('click',function setTwentyFive(){
             };
 
             if(timeMinutes==24){
-                    backTimeMinutes.textContent= `0${timeMinutes}`;
+                    backTimeMinutes.textContent=timeMinutes;
             };
 
             if(timeMinutes < 0){
@@ -158,7 +158,7 @@ breakLong.addEventListener('click', function setFifteen(){
             };
 
             if(timeMinutes==14){
-                    backTimeMinutes.textContent= `0${timeMinutes}`;
+                    backTimeMinutes.textContent=timeMinutes;
             };
 
             if(timeMinutes < 0){
