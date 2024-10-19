@@ -20,8 +20,9 @@ let finishTimer = function(){
         
         let flashing2 =  setInterval(function() {
         flashingDisplay.style.color = ""},2000);
+
         setTimeout(() => { clearInterval(flashing1,flashing2)}, 6000);
-    }, 54000);
+    }, 53000);
 };
 
 
