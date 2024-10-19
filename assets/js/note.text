@@ -16,3 +16,7 @@ il codice funziona, devo risolvere il la fine del timer ma funziona.
 non ho provato con il codice finishTimer.
 
 lo style del logo è giusto in main e non in devstyle
+
+centrare l'applicazione oer telefono, risulta tutta sulla sinistra ed è troppo piccola, togliere l'effetto del display sul touch del pad,
+
+l'header non è flex responsible
