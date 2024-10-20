@@ -28,6 +28,10 @@
         height: auto;
         font-size: 4em;
         padding: 10px;
+
+        &:hover{
+            box-shadow: rgba(255, 228, 225, 0.56) 0px 0px 30px 4px;
+        }
     }
 
     .styleButtonPlayer{
