@@ -51,6 +51,9 @@ set.addEventListener('click',function setTwentyFive(){
 
             if(timeMinutes==24){
                     backTimeMinutes.textContent=timeMinutes;
+            }else if(timeMinutes <= 9){
+                backTimeMinutes.textContent=`0${timeMinutes}`;
+                
             };
 
             if(timeMinutes < 0){
@@ -61,7 +64,7 @@ set.addEventListener('click',function setTwentyFive(){
             }else if(timeSecond <=0){
                 timeSecond = 60;
                 timeMinutes--;
-                backTimeMinutes.textContent= `0${timeMinutes}`;
+                backTimeMinutes.textContent=timeMinutes;
                 timerSeconds();
             }; 
         }, 1000);
@@ -157,6 +160,8 @@ breakLong.addEventListener('click', function setFifteen(){
 
             if(timeMinutes==14){
                     backTimeMinutes.textContent=timeMinutes;
+            }else if(timeMinutes <= 9){
+                    backTimeMinutes.textContent=`0${timeMinutes}`;
             };
 
             if(timeMinutes < 0){
@@ -167,7 +172,7 @@ breakLong.addEventListener('click', function setFifteen(){
             }else if(timeSecond <=0){
                 timeSecond = 60;
                 timeMinutes--;
-                backTimeMinutes.textContent= `0${timeMinutes}`;
+                backTimeMinutes.textContent=timeMinutes;
                 timerSeconds();
             }; 
         }, 1000);
