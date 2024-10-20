@@ -12,11 +12,12 @@
     .wrapper-column{
         display: block;
     }
-    
+
     .column-counter{
         display: grid;
         grid-template-columns: 1fr auto;
         margin: 40px;
+        height: auto;
 
             p{
                 width: 90%;
