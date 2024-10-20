@@ -16,7 +16,10 @@ body{
     font-weight: $weightFont;
 }
 
-
+.wrapper-column {
+    display: flex;
+    justify-content: center; /* Center the grid container horizontally */
+}
 
 .column-counter{
     display: grid;

@@ -1,5 +1,10 @@
 //tablet layout
 @media only screen and (min-width:430px) and (max-width:960px){
+    
+    .wrapper-column{
+        display: block;
+    }
+
     .column-counter{
         display: grid;
         grid-template-columns: 1fr auto;

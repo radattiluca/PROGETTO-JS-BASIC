@@ -8,6 +8,11 @@
             width: 80px;
         }
     }
+
+    .wrapper-column{
+        display: block;
+    }
+    
     .column-counter{
         display: grid;
         grid-template-columns: 1fr auto;
