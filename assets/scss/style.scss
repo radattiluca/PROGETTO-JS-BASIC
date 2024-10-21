@@ -44,13 +44,13 @@ body{
 }
 
 .display{
-    width: 260px;
-    height: 78px;
+    width: 200px;
+    height: 60px;
     border-radius: 5px;
     padding: 10px;
     background-color: $colorGreyishBlue;
     color: $colorLightPink;
-    font-size: 2.5em;
+    font-size: 2em;
     white-space: nowrap;
     box-shadow: $boxShadowDisplay;
 
@@ -61,8 +61,7 @@ body{
 
 
 .refreshStyle{
-    width: 80px;
-    height: 40px;
+    width: 50px;
     font-weight: $weightFontButton;
     font-size: 1.2em;
     vertical-align: bottom;
