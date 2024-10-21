@@ -1,6 +1,7 @@
 
 .headerStyle{
     width: 100%;
+    height: 90px;
     background-color: $colorDarkGreyishBlue;
     display: grid;
     grid-template-columns: auto auto;
@@ -8,6 +9,7 @@
     align-items: center;
     font-family: $fontStyle;
     font-weight: $weightFont;
+    font-size: 1.2em;
     color: $colorRedTomato;
     white-space: nowrap;
     margin-bottom: 60px;
