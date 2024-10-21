@@ -10,14 +10,15 @@ button{
   text-decoration: none;
   border: 0;
   border-radius: 50px;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: $weightFontButton;
 }
 
 
 .styleButtonPlayer{
   background-color: $colorRedTomato;
-  width: 60px;
+  width: 80px;
+  height: 40px;
   margin: 10px 2px 2px 2px;
   align-items: center;
   border-radius: 24px;
@@ -25,16 +26,15 @@ button{
   box-sizing: border-box;
   cursor: pointer;
   display: inline-flex;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: $weightFontButton;
-  height: 30px;
   justify-content: center;
   position: relative;
   text-align: center;
 }
 
 .containerGroupButton{
-  width: 80px;
+  width: 100px;
   background-color: $colorGreyishBlue;
   border-radius: 5px;
   padding: 30px 0 30px 0;
@@ -45,10 +45,10 @@ button{
     .groupButton{
       display: flex;
       flex-direction: column-reverse;
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       background-color: $colorRedTomato;
-      border-radius: 120px;
+      border-radius: 160px;
       margin: 15px auto 15px auto;
       padding: 10px 0 10px 0;
     }
