@@ -30,7 +30,7 @@ Tomato counter è un'applicazione progettata per poter contare ed azionare inter
 [🔝 Torna su](#tomato-counter)
 ## Utilizzo
 
-Premere uno tra i pulsanti rossi sulla destra, scegliere tra i 3 intervalli di tempo per preparare il timer. Una volta scelto l'intervallo di tempo, premere sul tasto play. Una volta che il timer è partito si potrà mettere in pausa con il tasto pausa ma non si potrà far partire un altro timer. Per poter scegliere un altro timer, bisognerà premere sul pulsante rosso con il simbolo del refresh sotto ai pulsanti degli intervalli di tempo.
+Premere uno dei tre pulsanti rossi sulla destra, scegliere il timer da 25 minuti per l'esecuzione del lavoro che state svolgendo, quello da 5 minuti per la pausa breve e infine quello da 15 minuti per la pausa più lunga. Una volta scelto l'intervallo di tempo, premere sul tasto play. Una volta che il timer è partito si potrà mettere in pausa con il tasto pausa ma non si potrà far partire un altro timer. Per poter scegliere un altro timer, bisognerà premere sul pulsante rosso con il simbolo del refresh sotto ai pulsanti degli intervalli di tempo.
 Nel frattempo si potrà usare il contatore e tenere sottocchio l'ora attuale.
 
 ## Contatti

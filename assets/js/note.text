@@ -22,3 +22,10 @@ centrare l'applicazione oer telefono, risulta tutta sulla sinistra ed è troppo 
 l'header non è flex responsible
 
 risolto problema relativo a il file scss, non funzionava più perchè il file _config andava importato prima degli altri nel file style.scss
+
+
+inserire le immagine per le card di condivisione social 
+riscrivere bene il readme
+finire la presentazione
+
+controllare se tutto funziona
