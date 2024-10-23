@@ -1,7 +1,3 @@
-.extra, .column-footer{
-    height: 100px; //to send the footer at the bottom of the page when the content is not enough
-}
-
 .column-footer{
     display: flex;
     flex-direction: row;
@@ -16,6 +12,10 @@
         text-decoration: none; 
         color: $colorRedTomato;
        }
+}
+
+.extra, .column-footer{
+    height: 100px; //to send the footer at the bottom of the page when the content is not enough
 }
 
 .row-social-footer{
