@@ -1,17 +1,29 @@
+.extra, .column-footer{
+    height: 100px; //to send the footer at the bottom of the page when the content is not enough
+}
+
 .column-footer{
     display: flex;
-    flex-direction: column;
-    padding: 20px;
+    flex-direction: row;
+    padding: 15px;
     margin-top: 5px;
     align-items: center;
-    color: $color-dark;
-    background-color: $color-pred-trasp;
+    justify-content: space-between;
+    color: $colorRedTomato;
+    background-color:$colorDarkGreyishBlue;
 
     a{
         text-decoration: none; 
+        color: $colorRedTomato;
        }
 }
 
-.extra, .column-footer{
-    height: 100px; //to send the footer at the bottom of the page when the content is not enough
+.row-social-footer{
+    svg{
+        width: 30px;
+        height: 20px;
+        fill: $colorRedTomato;
+        border-radius: 5px;
+    }
+
 }
