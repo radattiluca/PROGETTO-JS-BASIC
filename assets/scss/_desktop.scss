@@ -86,6 +86,14 @@
 
     }
 
+    .column-footer{
+
+        a:hover {
+            box-shadow:$boxShadowHoverButton;
+            transform: scale(1.05);
+        }
+    }
+
     //start custom scrollbar
     ::-webkit-scrollbar {
         width: 10px;
