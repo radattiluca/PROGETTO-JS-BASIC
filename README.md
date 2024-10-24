@@ -42,9 +42,9 @@ Qui di seguito troverete il link che vi spiegà cos'è la "Tecnica del Pomodoro"
 
 ## Utilizzo
 
-Prima di utilizzare l'applicazione leggere prima la "Tecnica del Pomodoro al link che ho allegato nella sezione **Descrizione** [Vai al link](#descrizione).
+Prima di utilizzare l'applicazione leggere la "Tecnica del Pomodoro al link che ho allegato nella sezione **Descrizione** [Vai al link](#descrizione).
 
-Selezionare l'intervallo di tempo da 25 minuti e premere il tasto **play**, a questo punto il timer partirà. Nel frattempo possiamo leggere l'ora corrente oppure usare il contatore per tenere conto di qualsiasi cosa abbiamo bisogno di contare.
+Selezionare l'intervallo di tempo da 25 minuti e premere il tasto **play**, a questo punto il timer partirà. Nel frattempo possiamo leggere l'ora corrente oppure usare il contatore per tenere conto di qualsiasi cosa abbiamo bisogno.
 
 Se abbiamo bisogno di fermare il timer, possiamo premere il tasto **pause** e riprenderlo quando vogliamo ripremendo **play**. 
 
