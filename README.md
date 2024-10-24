@@ -28,11 +28,11 @@ Qui di seguito troverete il link che vi spiegà cos'è la "Tecnica del Pomodoro"
 - **Funzionalità 2:** Contatore che ci permette di incrementare o decrementare tramite i pulsanti + e -.
 - **Funzionalità 3:** Timer con intervalli di tempo da 25, 15 e 5 minuti.
 - **Interfaccia Utente:** 
-* Layout semplice ed intuitivo.
-* Colori contrastanti per evidenziare le informazioni importanti.
-* Pulsanti e comandi facilmente riconoscibili.
-* Responsive Design.
-* L'aspetto generale riflette l'identità del logo e crea un'esperienza piacevole per l'utente.
+    * Layout semplice ed intuitivo.
+    * Colori contrastanti per evidenziare le informazioni importanti.
+    * Pulsanti e comandi facilmente riconoscibili.
+    * Responsive Design.
+    * L'aspetto generale riflette l'identità del logo e crea un'esperienza piacevole per l'utente.
 
 ## Linguaggi Utilizzati
 
