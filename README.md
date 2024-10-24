@@ -28,11 +28,11 @@ Qui di seguito troverete il link che vi spiegà cos'è la "Tecnica del Pomodoro"
 - **Funzionalità 2:** Contatore che ci permette di incrementare o decrementare tramite i pulsanti + e -.
 - **Funzionalità 3:** Timer con intervalli di tempo da 25, 15 e 5 minuti.
 - **Interfaccia Utente:** 
-    * Layout semplice ed intuitivo.
-    * Colori contrastanti per evidenziare le informazioni importanti.
-    * Pulsanti e comandi facilmente riconoscibili.
-    * Responsive Design.
-    * L'aspetto generale riflette l'identità del logo e crea un'esperienza piacevole per l'utente.
+* Layout semplice ed intuitivo.
+* Colori contrastanti per evidenziare le informazioni importanti.
+* Pulsanti e comandi facilmente riconoscibili.
+* Responsive Design.
+* L'aspetto generale riflette l'identità del logo e crea un'esperienza piacevole per l'utente.
 
 ## Linguaggi Utilizzati
 
@@ -48,11 +48,11 @@ Selezionare l'intervallo di tempo da 25 minuti e premere il tasto **play**, a qu
 
 Se abbiamo bisogno di fermare il timer, possiamo premere il tasto **pause** e riprenderlo quando vogliamo ripremendo **play**. 
 
-Una volta scaduti i 25 minuti dobbiamo riaggiornare la pagina con il pulsante **refresh**  :EMOJICODE:arrows_counterclockwise: questo pulsante aggiornerà l'intera pagina, azzerando anche il contatore.
+Una volta scaduti i 25 minuti dobbiamo riaggiornare la pagina con il pulsante **refresh** :arrows_counterclockwise: questo pulsante aggiornerà l'intera pagina, azzerando anche il contatore.
 
-A questo punto possiamo prenderci una pausa di 5 minuti prima di riprendere il nostro lavoro per altri 25 minuti. Per far partire il timer da 5 minuti possiamo procedere come descritto prima per il timer da 25.
+A questo punto possiamo prenderci una pausa di 5 minuti prima di riprendere il nostro lavoro per altri 25'. Per far partire il timer da 5 minuti possiamo procedere come descritto per il timer precedente.
 
-Alla completamento dei 4 cicli da 25 minuti e 5 di pausa potremmo avviare il timer per la pausa lunga di 15 minuti.
+Al completamento dei 4 cicli da 25 minuti e 5 di pausa potremmo avviare il timer per la pausa lunga di 15 minuti.
 
 L'applicazione può essere usata come meglio si desidera.
 
