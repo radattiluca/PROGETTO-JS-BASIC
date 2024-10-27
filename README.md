@@ -1,5 +1,5 @@
 # Tomato Counter
-![Senzanome](https://github.com/user-attachments/assets/53a824d7-2911-4f83-aeae-cca3428427a8)
+![Senzanome](https://raw.githubusercontent.com/radattiluca/PROGETTO-JS-BASIC/refs/heads/main/assets/img/imageOG.png)
 
 
 # Sommario
