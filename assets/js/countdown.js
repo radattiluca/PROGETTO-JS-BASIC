@@ -10,6 +10,7 @@ const breakLong = document.querySelector('#buttonFifteen');
 const stopCountDown = document.querySelector('#stopTimer');
 const resetPage = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
+const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC/raw/refs/heads/main/assets/audio/finishedTimer.mp3");
 
 
 let finishTimer = function(){
@@ -20,7 +21,9 @@ let finishTimer = function(){
         let flashing2 =  setInterval(function() {
         flashingDisplay.style.color = ""},2000);
 
-        setTimeout(() => { clearInterval(flashing1,flashing2)}, 6000);
+        setTimeout(() => { 
+            audioElement.play();
+            clearInterval(flashing1,flashing2)}, 6000);
 };
 
 
