@@ -6,14 +6,15 @@ const display = document.querySelector('#display-count');
 const reset = document.querySelector('#reset');
 let myCount = 0;
 
-// capire perchè non parte lo script 
 
+//increment function
 plus.addEventListener('click', () =>{
     myCount++; 
     display.textContent = myCount;
     
 });
 
+//decrease function
 minus.addEventListener('click', () =>{
     if(myCount == 0){
         e.preventDefault( );
@@ -25,6 +26,7 @@ minus.addEventListener('click', () =>{
     
 });
 
+//reset function
 reset.addEventListener('click', () =>{
     myCount = 0;
     display.textContent = 0;

@@ -43,6 +43,7 @@ const paragraphTwoPoints = document.createElement('span');
 const twoTwoPoints = paragraphTwoPoints.cloneNode(true);
 paragraphDisplayCountdown.className = "display";
 paragraphDisplayCountdown.id = "display-countdown";
+//individual displays were created to contain hours, minutes and seconds
 containerHours.id = "displayHours";
 containerMinutes.id = "displayMinutes";
 containerSeconds.id = "displaySeconds";
@@ -67,14 +68,18 @@ containerSeconds.innerHTML = '00';
 const pushPlay = document.createElement("button");
 const pushStop = document.createElement("button");
 const pushRefresh = document.createElement("button");
+
 pushPlay.id = "play";
 pushPlay.className = "styleButtonPlayer";
 pushPlay.innerHTML = "Play";
+
 pushStop.id = "stopTimer";
 pushStop.className = "styleButtonPlayer";
 pushStop.innerHTML = "Pause";
+
 pushRefresh.id = "refresh";
 pushRefresh.className = "refreshStyle styleButtonPlayer";
+
 paragraphDisplayCountdown.after(pushPlay, pushStop);
 pushRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
 
@@ -82,12 +87,16 @@ pushRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.pn
 const pushTwentyFive = document.createElement("button");
 pushTwentyFive.id = "buttonTwentyFive";
 pushTwentyFive.innerHTML = "25'";
+
 const pushFive = document.createElement("button");
 pushFive.id = "buttonFive";
 pushFive.innerHTML = "5'";
+
 const pushFifteen = document.createElement("button");
 pushFifteen.id = "buttonFifteen";
 pushFifteen.innerHTML = "15'";
+
+//created containers to insert the related timer buttons
 const containerBotton = document.querySelector("#row-button");
 const circleTwentyFive = document.querySelector("#twentyFive");
 const circleFive = document.querySelector("#five");
