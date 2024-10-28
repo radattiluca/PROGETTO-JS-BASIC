@@ -25,17 +25,17 @@ const pushMinus = document.createElement("button");
 pushPlus.id = "plus";
 pushPlus.className = "styleButtonPlayer";
 pushPlus.innerHTML = "+";
-pushPlus.dataset.customValue = 'add';
+pushPlus.setAttribute('data-action', 'add');
 
 pushReset.id = "reset";
 pushReset.className = "styleButtonPlayer";
 pushReset.innerHTML = "Reset";
-pushReset.dataset.customValue = 'zero';
+pushReset.setAttribute('data-action', 'zero');
 
 pushMinus.id = "minus";
 pushMinus.className = "styleButtonPlayer";
 pushMinus.innerHTML = "-";
-pushMinus.dataset.customValue = 'sub';
+pushMinus.setAttribute('data-action', 'sub');
 paragraphDisplayCounter.after(pushMinus, pushReset, pushPlus);
 
 

@@ -1,26 +1,26 @@
 "use strict";
 
-const display = document.querySelector('#display-count'); // Seleziona l'elemento di visualizzazione
-let myCount = 0; // Inizializza il contatore
+const display = document.querySelector('#display-count');
+let myCount = 0; // Initialize the counter
 
-document.addEventListener('click', function (event) {
-    const action = event.target.dataset.action; // Ottiene l'azione dal dataset
+// Add the event listener to the parent container
+document.querySelector('#row-counter').addEventListener('click', function (event) {
+    const action = event.target.dataset.action; // We get the action from the dataset
 
-    // Usa switch per gestire le azioni
+// We use switches to handle actions
     switch (action) {
         case 'add':
-            myCount++; // Incrementa il contatore
+            myCount++; // Increment the counter
             break;
         case 'sub':
-            myCount--; // Decrementa il contatore
+            myCount--; // Decrement the counter
             break;
-        case 'reset':
-            myCount = 0; // Resetta il contatore
+        case 'zero':
+            myCount = 0; // Reset the counter
             break;
         default:
-            console.log('Azione non riconosciuta'); // Gestione di casi non previsti
-            return; // Esci dalla funzione se non ci sono azioni valide
+            return; // Exits if there are no valid actions
     }
 
-    display.textContent = myCount; // Aggiorna il display
+    display.textContent = myCount; // Update the display
 });
