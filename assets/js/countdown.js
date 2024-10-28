@@ -13,6 +13,14 @@ const imageArrows = document.querySelector("#circleArrows");
 const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC/raw/refs/heads/main/assets/audio/finishedTimer.mp3");
 
 
+/*let myvalueSet = parseInt(set.value);
+console.log(myvalueSet);
+let myvalueSeTwo = parseInt(seTwo.value);
+console.log(myvalueSeTwo);
+let myvalueBL = parseInt(breakLong.value);
+console.log(myvalueBL);*/
+
+
 let finishTimer = function(){
                 
         let flashing1 = setInterval(function() {
@@ -37,41 +45,28 @@ set.addEventListener('click',function setTwentyFive(){
     start.addEventListener('click', function startCountDown(){
         seTwo.disabled=true; //to not start the seTwo code if the user clicks on button 5 while the set code is running
         breakLong.disabled=true; //to not start the breakLong code if the user clicks on button 15 while the set code is running
-
-        let timerSeconds = setInterval (function(){
-            
-            timeSecond--;
-            
-            if(timeSecond <=9){
-                backTimeSeconds.textContent= `0${timeSecond}`; 
-            }else{
-                backTimeSeconds.textContent= timeSecond;
-            };
-
-            if (timeMinutes==0 && timeSecond == 5){
-                finishTimer();
-            };
-
-            if(timeMinutes==24){
-                    backTimeMinutes.textContent=timeMinutes;
-            }else if(timeMinutes <= 9){
-                backTimeMinutes.textContent=`0${timeMinutes}`;
-                
-            };
-
-            if(timeMinutes < 0){
-                clearInterval(timerSeconds);
-                backTimeMinutes.textContent= "00";
-                backTimeSeconds.textContent= "00";
-                
-            }else if(timeSecond <=0){
-                timeSecond = 60;
-                timeMinutes--;
-                backTimeMinutes.textContent=timeMinutes;
-                timerSeconds();
-            }; 
-        }, 1000);
         
+        function countdown(seconds) {
+            if (seconds >= 0) {
+                backTimeSeconds.textContent = seconds;
+                setTimeout(() => countdown(seconds - 1), 1000);
+            } else {
+                console.log("Tempo scaduto!");
+            }
+        }
+
+        function countdown(minutes) {
+            if (minutes >= 0) {
+                backTimeMinutes.textContent = minutes;
+                setTimeout(() => countdown(minutes - 1), 1000);
+            } else {
+                console.log("Tempo scaduto!");
+            }
+        }
+        
+        // Esegui il conto alla rovescia per 10 secondi
+        countdown(24);
+
         stopCountDown.addEventListener('click', function(){
             //to freeze the pause button from running to less than a minute and avoid the execution of finishTimer()
             if(!(timeMinutes == 0)){
