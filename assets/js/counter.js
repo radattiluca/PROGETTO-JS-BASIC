@@ -16,12 +16,9 @@ plus.addEventListener('click', () =>{
 
 //decrease function
 minus.addEventListener('click', () =>{
-    if(myCount == 0){
-        e.preventDefault( );
-    } else{
-        myCount--;
-        display.textContent = myCount;
-    }
+
+    myCount--;
+    display.textContent = myCount;
     
     
 });

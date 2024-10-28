@@ -43,6 +43,7 @@ const paragraphTwoPoints = document.createElement('span');
 const twoTwoPoints = paragraphTwoPoints.cloneNode(true);
 paragraphDisplayCountdown.className = "display";
 paragraphDisplayCountdown.id = "display-countdown";
+
 //individual displays were created to contain hours, minutes and seconds
 containerHours.id = "displayHours";
 containerMinutes.id = "displayMinutes";
