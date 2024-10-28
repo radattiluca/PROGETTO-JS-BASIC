@@ -84,7 +84,6 @@ set.addEventListener('click',function setTwentyFive(){
 
 //start of section interval 5 minutes
 seTwo.addEventListener('click', function setFive(){
-    
     let timeMinutes = 4;
     let timeSecond = 60;
     backTimeMinutes.textContent = "05";

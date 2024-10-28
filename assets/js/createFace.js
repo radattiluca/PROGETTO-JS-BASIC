@@ -20,16 +20,28 @@ divContainerCounter.prepend(paragraphDisplayCounter);
 const pushPlus = document.createElement("button");
 const pushReset = document.createElement("button");
 const pushMinus = document.createElement("button");
+
+
 pushPlus.id = "plus";
 pushPlus.className = "styleButtonPlayer";
 pushPlus.innerHTML = "+";
+pushPlus.dataset.customValue = 'add';
+
 pushReset.id = "reset";
 pushReset.className = "styleButtonPlayer";
 pushReset.innerHTML = "Reset";
+pushReset.dataset.customValue = 'zero';
+
 pushMinus.id = "minus";
 pushMinus.className = "styleButtonPlayer";
 pushMinus.innerHTML = "-";
+pushMinus.dataset.customValue = 'sub';
 paragraphDisplayCounter.after(pushMinus, pushReset, pushPlus);
+
+
+
+
+
 
 
 
@@ -43,7 +55,6 @@ const paragraphTwoPoints = document.createElement('span');
 const twoTwoPoints = paragraphTwoPoints.cloneNode(true);
 paragraphDisplayCountdown.className = "display";
 paragraphDisplayCountdown.id = "display-countdown";
-
 //individual displays were created to contain hours, minutes and seconds
 containerHours.id = "displayHours";
 containerMinutes.id = "displayMinutes";
