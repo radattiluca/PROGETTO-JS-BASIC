@@ -15,49 +15,66 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
     const list = document.querySelector('#myList'); //ho preso il contenitore dei pulsanti intervallo
     const listCommands = document.querySelector('#row-countdown'); //ho preso il contenitore dei pulsanti di gioco
     let timeMinutes;//ho creato la variabile globale 
+    let timeSeconds = 60;
     let timer;
+
+    function addZero(){
+        if(timeMinutes <=9){
+            backTimeMinutes.textContent = `0${timeMinutes}`;
+        }else{
+            backTimeMinutes.textContent = timeMinutes;
+        }
+    };
 
     list.addEventListener('click', function(event) {
         if (event.target.tagName === 'BUTTON') { //se il click è avvenuto su un pulsante gli chiediamo di quale pulsante si tratta e ne prendiamo il valore 
-        alert('Hai cliccato su: ' + event.target.textContent);
-        alert('Il valore del pulsante è: ' + event.target.value);
+        //alert('Hai cliccato su: ' + event.target.textContent);
+       //alert('Il valore del pulsante è: ' + event.target.value);
         timeMinutes = parseInt(event.target.value); //ci assicuriamo che sia un numero intero e lo inseriamo nella variabile timeMinutes
-        console.log(timeMinutes);
+        //console.log(timeMinutes);
+        addZero();
+            
         }; 
 
         listCommands.addEventListener('click', function(event) {
             if (event.target.tagName === 'BUTTON') { //facciamo la stessa cosa per i pulsanti di gioco
-                alert('Hai cliccato su: ' + event.target.textContent);
-                alert('L"id del pulsante è: ' + event.target.id);
-                let myId = event.target.id;
+                //alert('Hai cliccato su: ' + event.target.textContent);
+                //alert('L"id del pulsante è: ' + event.target.id);
+                //let myId = event.target.id;
                 //console.log(myId);
             }
                
             if(event.target.id === 'play'){
-                
-                function timerMinutes(count) {
+                timeMinutes = timeMinutes-1;
+                addZero();
+                function timerSeconds(count) {
                     // Mostra il numero corrente
                     if(count<=9){
-                        backTimeMinutes.textContent = `0${count}`;
+                        backTimeSeconds.textContent = `0${count}`;
                     } else{
-                        backTimeMinutes.textContent = count;
+                        backTimeSeconds.textContent = count;
                     }
         
                     // Se il conteggio è maggiore di 0, continua il conto alla rovescia
                     if (count > 0) {
-                            setTimeout(() => {
-                            timerMinutes(count - 1); // Chiamata ricorsiva con il numero decrementato
+                        setTimeout(() => {
+                            timerSeconds(count - 1); // Chiamata ricorsiva con il numero decrementato
                         }, 1000);// Aspetta 1 secondo (1000 millisecondi)
-                    } else {
-                        // Quando il conteggio arriva a 0
-                        backTimeMinutes.textContent = "00";
+
+                    } else if (count <= 0){
+                        // Quando il conteggio dei secondi arriva a 0
+                        timeMinutes--; //time minutes si decrementa 
+                        addZero();
+                        clearTimeout(timerSeconds); // cancello il timer precedente
+                        timerSeconds(timeSeconds-1); //ne inizializzo un altro
+                    } else if(count == -1){
+                        clearTimeout(timerSeconds); //se count non è ne maggiore di 0 e ne uguale si ferma tutto.
                     }
                 }
-        
+                
                 // Inizializza il conto alla rovescia da 10
-                    timerMinutes(timeMinutes-1);
-                
-                
+                    timerSeconds(timeSeconds-1);
+
 
             } else if(event.target.id === 'stopTimer'){
                 console.log('stoppa timer');
