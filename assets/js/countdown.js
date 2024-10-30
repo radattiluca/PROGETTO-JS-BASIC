@@ -4,11 +4,9 @@ const backTimeMinutes = document.querySelector('#displayMinutes');
 const backTimeSeconds = document.querySelector('#displaySeconds');
 const flashingDisplay = document.querySelector('#display-countdown');
 const start = document.querySelector('#play');
-const set = document.querySelector('#buttonTwentyFive');
-const seTwo = document.querySelector('#buttonFive');
-const breakLong = document.querySelector('#buttonFifteen');
 const stopCountDown = document.querySelector('#stopTimer');
-const resetPage = document.querySelector("#refresh");
+const startAgain = document.querySelector('#resume');
+const resetTimer = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC/raw/refs/heads/main/assets/audio/finishedTimer.mp3");
 
@@ -16,26 +14,18 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
     const listCommands = document.querySelector('#row-countdown'); //ho preso il contenitore dei pulsanti di gioco
     let timeMinutes;//ho creato la variabile globale 
     let timeSeconds = 60;
+    let timeSecondsNew;
     let timer;
     let timerId; // Variabile per tenere traccia del timer
     let isTimerActive = false; // Variabile di stato del timer
 
-    /*function startTimer() {
-        if (isTimerActive) {
-            console.log("Il timer è già attivo."); // Controllo se il timer è già attivo
-            return; // Non avviare un nuovo timer
-        }
-        clearTimeout(timerId); // Cancella eventuali timer precedenti
-        isTimerActive = true; // Imposta lo stato del timer come attivo
-    };*/
+
     list.addEventListener('click', function(event) {
         console.log('il timer è attivo?'+isTimerActive); // per controllare gli errori
         if(isTimerActive){
             console.log("il timer è attivo quindi non puoi scrivere il valore nel display");// per controllare gli errori
             return;
-        }else{
-            
-            if (event.target.tagName === 'BUTTON') { 
+        }else if (event.target.tagName === 'BUTTON') { 
                 //se il click è avvenuto su un pulsante gli chiediamo di quale pulsante si tratta e ne prendiamo il valore 
                 console.log('Hai cliccato su: ' + event.target.textContent);
                 console.log('Il valore del pulsante è: ' + event.target.value);
@@ -44,7 +34,9 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
                 timeMinutes = parseInt(event.target.value); //ci assicuriamo che sia un numero intero e lo inseriamo nella variabile timeMinutes
                 console.log('timeMinutes è'+ timeMinutes + 'dopo assegnazione');
                 console.log("il timer non è attivo quindi puoi scrivere il valore nel display");// per controllare gli errori
-                backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes; }
+                backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes; 
+            
+                //qui c'era un else con all'interno un if che ho sostituito con un if else, se non dovesse funzionare qualcosa riscrivere come in precedenza
           
         }; 
     
@@ -62,45 +54,36 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
             isTimerActive = true;
             timeMinutes = timeMinutes-1;
             backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
-            function timerSeconds(count) {
-                // Mostra il numero corrente
-                backTimeSeconds.textContent = count <= 9 ? `0${count}` : count;
-    
-                // Se il conteggio è maggiore di 0, continua il conto alla rovescia
-                if (count > 0) {
-                    timerId = setTimeout(() => {
-                        timerSeconds(count - 1); // Chiamata ricorsiva con il numero decrementato
-                    }, 1000);// Aspetta 1 secondo (1000 millisecondi)
-
-                } else if (count == 0){
-                    // Quando il conteggio dei secondi arriva a 0
-                    if(timeMinutes != 0){
-                        setTimeout(()=>{
-                            timeMinutes--; //time minutes si decrementa 
-                            backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
-                            clearTimeout(timerId); // cancello il timer precedente
-                            isTimerActive = false; // Imposta lo stato del timer come inattivo
-                            timerSeconds(timeSeconds-1); //ne inizializzo un altro
-                            isTimerActive = true;
-                        },1000); 
-                    } else{
-                        clearTimeout(timerId);
-                        isTimerActive = false;
-                    }
-                }
-            }
+            // qui ho tagliato la funzione per provare a farla diventare globale.
             
-            // Inizializza il conto alla rovescia da 10
+            // Inizializza il conto alla rovescia da 59
                 timerSeconds(timeSeconds-1);
 
 
         } else if(event.target.id === 'stopTimer'){
+            clearTimeout(timerId);
+            isTimerActive = false;
+            timeSeconds = parseInt(backTimeSeconds.innerText);
+            timeSecondsNew = timeSeconds;
+            console.log(timeSecondsNew);
             console.log('stoppa timer');
             
+        } else if(event.target.id === 'resume'){
+            isTimerActive = true;
+            timeSeconds = timeSecondsNew;// qui prende il valore da dove si è fermato il timer ma dopo lo ricomincia semrpre da quel numero perchè va a sostuire l'argomento di timerSeconds();
+    
         }
 
     });
 
+    resetTimer.addEventListener('click', function(){
+        clearTimeout(timerId); // Cancella il timer attivo
+        isTimerActive = false; // Imposta il timer come inattivo
+        timeMinutes = 0; // Resetta i minuti
+        timeSeconds = 60; // Resetta i secondi
+        backTimeMinutes.textContent = "00"; // Ripristina il display dei minuti
+        backTimeSeconds.textContent = "00"; // Ripristina il display dei secondi
+    });
     
 
 //start of section interval 25 minutes
@@ -271,6 +254,4 @@ breakLong.addEventListener('click', function setFifteen(){
 
 });
 //finish of section break long 15'
-resetPage.addEventListener('click', function(){
-    location.reload();
-});*/
+*/

@@ -79,7 +79,10 @@ containerSeconds.innerHTML = '00';
 //created buttons inside countdown node
 const pushPlay = document.createElement("button");
 const pushStop = document.createElement("button");
+const pushResume = document.createElement("button");
 const pushRefresh = document.createElement("button");
+
+
 
 pushPlay.id = "play";
 pushPlay.className = "styleButtonPlayer";
@@ -89,10 +92,14 @@ pushStop.id = "stopTimer";
 pushStop.className = "styleButtonPlayer";
 pushStop.innerHTML = "Pause";
 
+pushResume.id = "resume";
+pushResume.className = "styleButtonPlayer";
+pushResume.innerHTML = "Resume";
+
 pushRefresh.id = "refresh";
 pushRefresh.className = "refreshStyle styleButtonPlayer";
 
-paragraphDisplayCountdown.after(pushPlay, pushStop);
+paragraphDisplayCountdown.after(pushPlay, pushStop, pushResume);
 pushRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
 
 //created 25", 15" and 5" buttons
