@@ -17,72 +17,88 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
     let timeMinutes;//ho creato la variabile globale 
     let timeSeconds = 60;
     let timer;
+    let timerId; // Variabile per tenere traccia del timer
+    let isTimerActive = false; // Variabile di stato del timer
 
-    function addZero(){
-        if(timeMinutes <=9){
-            backTimeMinutes.textContent = `0${timeMinutes}`;
-        }else{
-            backTimeMinutes.textContent = timeMinutes;
+    /*function startTimer() {
+        if (isTimerActive) {
+            console.log("Il timer è già attivo."); // Controllo se il timer è già attivo
+            return; // Non avviare un nuovo timer
         }
-    };
-
+        clearTimeout(timerId); // Cancella eventuali timer precedenti
+        isTimerActive = true; // Imposta lo stato del timer come attivo
+    };*/
     list.addEventListener('click', function(event) {
-        if (event.target.tagName === 'BUTTON') { //se il click è avvenuto su un pulsante gli chiediamo di quale pulsante si tratta e ne prendiamo il valore 
-        //alert('Hai cliccato su: ' + event.target.textContent);
-       //alert('Il valore del pulsante è: ' + event.target.value);
-        timeMinutes = parseInt(event.target.value); //ci assicuriamo che sia un numero intero e lo inseriamo nella variabile timeMinutes
-        //console.log(timeMinutes);
-        addZero();
+        console.log('il timer è attivo?'+isTimerActive); // per controllare gli errori
+        if(isTimerActive){
+            console.log("il timer è attivo quindi non puoi scrivere il valore nel display");// per controllare gli errori
+            return;
+        }else{
             
+            if (event.target.tagName === 'BUTTON') { 
+                //se il click è avvenuto su un pulsante gli chiediamo di quale pulsante si tratta e ne prendiamo il valore 
+                console.log('Hai cliccato su: ' + event.target.textContent);
+                console.log('Il valore del pulsante è: ' + event.target.value);
+                timeMinutes = 0; // per azzerare la variabile nel caso in cui si selezioni un pulsante prima di scegliere quello destinato al timer
+                console.log('timeMinutes è'+ timeMinutes + 'prima che venga assegnato');
+                timeMinutes = parseInt(event.target.value); //ci assicuriamo che sia un numero intero e lo inseriamo nella variabile timeMinutes
+                console.log('timeMinutes è'+ timeMinutes + 'dopo assegnazione');
+                console.log("il timer non è attivo quindi puoi scrivere il valore nel display");// per controllare gli errori
+                backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes; }
+          
         }; 
+    
+    });
 
-        listCommands.addEventListener('click', function(event) {
-            if (event.target.tagName === 'BUTTON') { //facciamo la stessa cosa per i pulsanti di gioco
-                //alert('Hai cliccato su: ' + event.target.textContent);
-                //alert('L"id del pulsante è: ' + event.target.id);
-                //let myId = event.target.id;
-                //console.log(myId);
-            }
-               
-            if(event.target.id === 'play'){
-                timeMinutes = timeMinutes-1;
-                addZero();
-                function timerSeconds(count) {
-                    // Mostra il numero corrente
-                    if(count<=9){
-                        backTimeSeconds.textContent = `0${count}`;
+    listCommands.addEventListener('click', function(event) {
+        if (event.target.tagName === 'BUTTON') { //facciamo la stessa cosa per i pulsanti di gioco
+            //alert('Hai cliccato su: ' + event.target.textContent);
+            //alert('L"id del pulsante è: ' + event.target.id);
+            //let myId = event.target.id;
+            //console.log(myId);
+        }
+           
+        if(event.target.id === 'play'){
+            isTimerActive = true;
+            timeMinutes = timeMinutes-1;
+            backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
+            function timerSeconds(count) {
+                // Mostra il numero corrente
+                backTimeSeconds.textContent = count <= 9 ? `0${count}` : count;
+    
+                // Se il conteggio è maggiore di 0, continua il conto alla rovescia
+                if (count > 0) {
+                    timerId = setTimeout(() => {
+                        timerSeconds(count - 1); // Chiamata ricorsiva con il numero decrementato
+                    }, 1000);// Aspetta 1 secondo (1000 millisecondi)
+
+                } else if (count == 0){
+                    // Quando il conteggio dei secondi arriva a 0
+                    if(timeMinutes != 0){
+                        setTimeout(()=>{
+                            timeMinutes--; //time minutes si decrementa 
+                            backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
+                            clearTimeout(timerId); // cancello il timer precedente
+                            isTimerActive = false; // Imposta lo stato del timer come inattivo
+                            timerSeconds(timeSeconds-1); //ne inizializzo un altro
+                            isTimerActive = true;
+                        },1000); 
                     } else{
-                        backTimeSeconds.textContent = count;
-                    }
-        
-                    // Se il conteggio è maggiore di 0, continua il conto alla rovescia
-                    if (count > 0) {
-                        setTimeout(() => {
-                            timerSeconds(count - 1); // Chiamata ricorsiva con il numero decrementato
-                        }, 1000);// Aspetta 1 secondo (1000 millisecondi)
-
-                    } else if (count <= 0){
-                        // Quando il conteggio dei secondi arriva a 0
-                        timeMinutes--; //time minutes si decrementa 
-                        addZero();
-                        clearTimeout(timerSeconds); // cancello il timer precedente
-                        timerSeconds(timeSeconds-1); //ne inizializzo un altro
-                    } else if(count == -1){
-                        clearTimeout(timerSeconds); //se count non è ne maggiore di 0 e ne uguale si ferma tutto.
+                        clearTimeout(timerId);
+                        isTimerActive = false;
                     }
                 }
-                
-                // Inizializza il conto alla rovescia da 10
-                    timerSeconds(timeSeconds-1);
-
-
-            } else if(event.target.id === 'stopTimer'){
-                console.log('stoppa timer');
-                
             }
-    
-        });
-    
+            
+            // Inizializza il conto alla rovescia da 10
+                timerSeconds(timeSeconds-1);
+
+
+        } else if(event.target.id === 'stopTimer'){
+            console.log('stoppa timer');
+            
+        }
+
     });
 
     

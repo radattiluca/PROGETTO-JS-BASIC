@@ -100,20 +100,18 @@ const pushTwentyFive = document.createElement("button");
 pushTwentyFive.id = "buttonTwentyFive";
 pushTwentyFive.innerHTML = "25'";
 pushTwentyFive.value = "25";
-pushTwentyFive.setAttribute('data-action', 'timer25');
 
 
 const pushFive = document.createElement("button");
 pushFive.id = "buttonFive";
 pushFive.innerHTML = "5'";
 pushFive.value = "5";
-pushFive.setAttribute('data-action', 'timer5');
 
 const pushFifteen = document.createElement("button");
 pushFifteen.id = "buttonFifteen";
 pushFifteen.innerHTML = "15'";
 pushFifteen.value = "15";
-pushFifteen.setAttribute('data-action', 'timer15');
+
 
 //created containers to insert the related timer buttons
 const containerBotton = document.querySelector("#row-button");
