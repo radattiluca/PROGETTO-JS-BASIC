@@ -24,6 +24,17 @@ function timerSeconds (count) {
         } else{
             clearTimeout(timerId);
             isTimerActive = false;
+            audioElement.play();
+            
+            let flashing1 = setInterval(function() {
+                flashingDisplay.style.color = "#8f8288"},1000);
+            let flashing2 =  setInterval(function() {
+                flashingDisplay.style.color = ""},2000);
+            
+            setTimeout(() => {
+                clearInterval(flashing1,flashing2)
+            }, 5000);
+       
         }
     }
 }

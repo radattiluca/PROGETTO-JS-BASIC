@@ -8,10 +8,11 @@ const stopCountDown = document.querySelector('#stopTimer');
 const startAgain = document.querySelector('#resume');
 const resetTimer = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
+const list = document.querySelector('#myList'); //ho preso il contenitore dei pulsanti intervallo
+const listCommands = document.querySelector('#row-countdown'); //ho preso il contenitore dei pulsanti di gioco
 const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC/raw/refs/heads/main/assets/audio/finishedTimer.mp3");
 
-    const list = document.querySelector('#myList'); //ho preso il contenitore dei pulsanti intervallo
-    const listCommands = document.querySelector('#row-countdown'); //ho preso il contenitore dei pulsanti di gioco
+    
     let timeMinutes;//ho creato la variabile globale 
     let timeSeconds = 60;
     let timeSecondsPass; // variabile che assume il valore dei secondi passati
@@ -34,6 +35,7 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
                 console.log('timeMinutes è'+ timeMinutes + 'prima che venga assegnato');
                 timeMinutes = parseInt(event.target.value); //ci assicuriamo che sia un numero intero e lo inseriamo nella variabile timeMinutes
                 console.log('timeMinutes è'+ timeMinutes + 'dopo assegnazione');
+                console.log(typeof timeMinutes);
                 console.log("il timer non è attivo quindi puoi scrivere il valore nel display");// per controllare gli errori
                 backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes; 
             
@@ -55,17 +57,18 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
             if (isTimerActive) {
                 console.log("Il timer è già attivo. Non puoi avviare un nuovo timer."); // da eliminare dopo, solo per il controllo degli errori
                 return; // Esci se il timer è attivo
-            }
-
-            isTimerActive = true;
-            timeMinutes = timeMinutes-1;
-            backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
+            } else if (!(timeMinutes === 5 || timeMinutes === 15 || timeMinutes === 25)){
+                console.log("la variabile non è definita. Non puoi avviare un nuovo timer."); // da eliminare dopo, solo per il controllo degli errori
+                return; // Esci se il timer è attivo
+            }else{
+                isTimerActive = true;
+                timeMinutes = timeMinutes-1;
+                backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
             // qui ho tagliato la funzione per provare a farla diventare globale e funziona.
-            
             // Inizializza il conto alla rovescia da 59
                 timerSeconds(timeSeconds-1);
-
-
+            };
+             
         } else if(event.target.id === 'stopTimer'){
             clearTimeout(timerId); // il timer precedente viene pulito
             isTimerActive = false; 
@@ -75,11 +78,12 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
             console.log('stoppa timer');
             
         } else if(event.target.id === 'resume'){
-            isTimerActive = true;
-            timeSecondsPass = 0; // azzera la variabile dei secondi passati.
-            console.log(timeSecondsPass);
-            timerSeconds(timeSeconds - timeSecondsNew); // la funzione parte con i secondi in meno già passati
-            
+            if(!(isTimerActive)){
+                isTimerActive = true;
+                timeSecondsPass = 0; // azzera la variabile dei secondi passati.
+                console.log(timeSecondsPass);
+                timerSeconds(timeSeconds - timeSecondsNew); // la funzione parte con i secondi in meno già passati
+            }    
         }
 
     });
@@ -93,173 +97,3 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
         backTimeSeconds.textContent = "00"; // Ripristina il display dei secondi
     });
     
-
-//start of section interval 25 minutes
-    /*start.addEventListener('click', function startCountDown(){
-
-        let timerSeconds = setTimeout (function(){
-            let timeSecond= 60;
-            timeSecond--;
-            
-            if(timeSecond <=9){
-                backTimeSeconds.textContent= `0${timeSecond}`; 
-            }else{
-                backTimeSeconds.textContent= timeSecond;
-            };
-
-            if (timeMinutes==0 && timeSecond == 5){
-                finishTimer();
-            };
-
-            if(timeMinutes==24){
-                    backTimeMinutes.textContent=timeMinutes;
-            }else if(timeMinutes <= 9){
-                backTimeMinutes.textContent=`0${timeMinutes}`;
-                
-            };
-
-            if(timeMinutes < 0){
-                clearInterval(timerSeconds);
-                backTimeMinutes.textContent= "00";
-                backTimeSeconds.textContent= "00";
-                
-            }else if(timeSecond <=0){
-                timeSecond = 60;
-                timeMinutes--;
-                backTimeMinutes.textContent=timeMinutes;
-                timerSeconds();
-            }; 
-        }, 1000);
-        
-        stopCountDown.addEventListener('click', function(){
-            //to freeze the pause button from running to less than a minute and avoid the execution of finishTimer()
-            if(!(timeMinutes == 0)){
-                clearInterval(timerSeconds);
-            }
-        });    
-    });*/
-
-/*let finishTimer = function(){
-                
-        let flashing1 = setInterval(function() {
-        flashingDisplay.style.color = "#8f8288"},1000);
-        
-        let flashing2 =  setInterval(function() {
-        flashingDisplay.style.color = ""},2000);
-
-        setTimeout(() => { 
-            audioElement.play();
-            clearInterval(flashing1,flashing2)}, 6000);
-};*/
-
-/*
-//finish of section interval 25 minutes
-
-//start of section interval 5 minutes
-seTwo.addEventListener('click', function setFive(){
-    let timeMinutes = 4;
-    let timeSecond = 60;
-    backTimeMinutes.textContent = "05";
-
-    start.addEventListener('click', function startCountDown(){
-        set.disabled=true; //to not start the set code if the user clicks on button 25 while the seTwo code is running
-        breakLong.disabled=true; //to not start the breakLong code if the user clicks on button 15 while the seTwo code is running.
-
-        let timerSeconds = setInterval (function(){
-            
-            timeSecond--;
-            
-            if(timeSecond <=9){
-                backTimeSeconds.textContent= `0${timeSecond}`; 
-            }else{
-                backTimeSeconds.textContent= timeSecond;
-            };
-
-            if (timeMinutes==0 && timeSecond == 5){
-                finishTimer(); 
-            };
-
-            if(timeMinutes==4){
-                    backTimeMinutes.textContent= `0${timeMinutes}`;
-            };
-
-            if(timeMinutes < 0){
-                clearInterval(timerSeconds);
-                backTimeMinutes.textContent= "00";
-                backTimeSeconds.textContent= "00";
-                
-            }else if(timeSecond <=0){
-                timeSecond = 60;
-                timeMinutes--;
-                backTimeMinutes.textContent= `0${timeMinutes}`;
-                timerSeconds();
-            }; 
-        }, 1000);
-        
-        stopCountDown.addEventListener('click', function(){
-            //to freeze the pause button from running to less than a minute and avoid the execution of finishTimer()
-            if(!(timeMinutes === 0)){ 
-                clearInterval(timerSeconds);
-            }
-        });    
-    });
-
-});
-//finish of section interval 5 minutes
-
-//start of section break long 15 minutes
-breakLong.addEventListener('click', function setFifteen(){
-    
-
-    let timeMinutes = 14;
-    let timeSecond = 60;
-    backTimeMinutes.textContent = "15";
-
-    start.addEventListener('click', function startCountDown(){
-        set.disabled=true; //to not start the set code if the user clicks on button 25 while the seTwo code is running
-        seTwo.disabled=true; //to not start the seTwo code if the user clicks on button 5 while the seTwo code is running
-        
-        let timerSeconds = setInterval (function(){
-            
-            timeSecond--;
-            
-            if(timeSecond <=9){
-                backTimeSeconds.textContent= `0${timeSecond}`; 
-            }else{
-                backTimeSeconds.textContent= timeSecond;
-            };
-
-            if (timeMinutes==0 && timeSecond == 5){
-                finishTimer(); 
-            };
-
-            if(timeMinutes==14){
-                    backTimeMinutes.textContent=timeMinutes;
-            }else if(timeMinutes <= 9){
-                    backTimeMinutes.textContent=`0${timeMinutes}`;
-            };
-
-            if(timeMinutes < 0){
-                clearInterval(timerSeconds);
-                backTimeMinutes.textContent= "00";
-                backTimeSeconds.textContent= "00";
-                
-            }else if(timeSecond <=0){
-                timeSecond = 60;
-                timeMinutes--;
-                backTimeMinutes.textContent=timeMinutes;
-                timerSeconds();
-            }; 
-        }, 1000);
-        
-        stopCountDown.addEventListener('click', function(){
-            //to freeze the pause button from running to less than a minute and avoid the execution of finishTimer()
-            if(!(timeMinutes === 0)){ 
-                clearInterval(timerSeconds);
-            }
-        });    
-    });
-
-});
-//finish of section break long 15'
-*/
