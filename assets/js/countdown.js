@@ -14,7 +14,8 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
     const listCommands = document.querySelector('#row-countdown'); //ho preso il contenitore dei pulsanti di gioco
     let timeMinutes;//ho creato la variabile globale 
     let timeSeconds = 60;
-    let timeSecondsNew;
+    let timeSecondsPass; // variabile che assume il valore dei secondi passati
+    let timeSecondsNew; // variabile che assume il valore della differenza tra i secondi iniziali e quelli rimanenti
     let timer;
     let timerId; // Variabile per tenere traccia del timer
     let isTimerActive = false; // Variabile di stato del timer
@@ -51,27 +52,34 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
         }
            
         if(event.target.id === 'play'){
+            if (isTimerActive) {
+                console.log("Il timer è già attivo. Non puoi avviare un nuovo timer."); // da eliminare dopo, solo per il controllo degli errori
+                return; // Esci se il timer è attivo
+            }
+
             isTimerActive = true;
             timeMinutes = timeMinutes-1;
             backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
-            // qui ho tagliato la funzione per provare a farla diventare globale.
+            // qui ho tagliato la funzione per provare a farla diventare globale e funziona.
             
             // Inizializza il conto alla rovescia da 59
                 timerSeconds(timeSeconds-1);
 
 
         } else if(event.target.id === 'stopTimer'){
-            clearTimeout(timerId);
-            isTimerActive = false;
-            timeSeconds = parseInt(backTimeSeconds.innerText);
-            timeSecondsNew = timeSeconds;
+            clearTimeout(timerId); // il timer precedente viene pulito
+            isTimerActive = false; 
+            timeSecondsPass = parseInt(backTimeSeconds.innerText); // la variabile prende il valore scritto sul display dei secondi e viene trasformato in number
+            timeSecondsNew = timeSeconds - timeSecondsPass; // la variabile perende il valore dei secondi passati prima che si fermasse il timer
             console.log(timeSecondsNew);
             console.log('stoppa timer');
             
         } else if(event.target.id === 'resume'){
             isTimerActive = true;
-            timeSeconds = timeSecondsNew;// qui prende il valore da dove si è fermato il timer ma dopo lo ricomincia semrpre da quel numero perchè va a sostuire l'argomento di timerSeconds();
-    
+            timeSecondsPass = 0; // azzera la variabile dei secondi passati.
+            console.log(timeSecondsPass);
+            timerSeconds(timeSeconds - timeSecondsNew); // la funzione parte con i secondi in meno già passati
+            
         }
 
     });
