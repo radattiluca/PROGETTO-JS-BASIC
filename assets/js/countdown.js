@@ -10,6 +10,8 @@ const resetTimer = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 const list = document.querySelector('#myList'); //ho preso il contenitore dei pulsanti intervallo
 const listCommands = document.querySelector('#row-countdown'); //ho preso il contenitore dei pulsanti di gioco
+const errorBox = document.querySelector('#boxError');
+const message = document.querySelector('#messageError');
 const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC/raw/refs/heads/main/assets/audio/finishedTimer.mp3");
 
     
@@ -25,7 +27,8 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
     list.addEventListener('click', function(event) {
         console.log('il timer è attivo?'+isTimerActive); // per controllare gli errori
         if(isTimerActive){
-            console.log("il timer è attivo quindi non puoi scrivere il valore nel display");// per controllare gli errori
+            errorBox.style.display = 'block';
+            messageError.innerHTML = "<strong>ATTENTION!</strong><br> The timer is already running. <br> Press the refresh button before entering a new value";
             return;
         }else if (event.target.tagName === 'BUTTON') { 
                 //se il click è avvenuto su un pulsante gli chiediamo di quale pulsante si tratta e ne prendiamo il valore 
@@ -55,16 +58,17 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
            
         if(event.target.id === 'play'){
             if (isTimerActive) {
-                console.log("Il timer è già attivo. Non puoi avviare un nuovo timer."); // da eliminare dopo, solo per il controllo degli errori
+                errorBox.style.display = 'block';
+                messageError.innerHTML = "<strong>ATTENTION!</strong><br> The timer is already active. You cannot start a new timer.";
                 return; // Esci se il timer è attivo
             } else if (!(timeMinutes === 5 || timeMinutes === 15 || timeMinutes === 25)){
-                console.log("la variabile non è definita. Non puoi avviare un nuovo timer."); // da eliminare dopo, solo per il controllo degli errori
+                errorBox.style.display = 'block';
+                messageError.innerHTML = "<strong>ATTENTION!</strong><br> The variable is not defined. <br> You cannot start a new timer unless a time interval has been chosen first.";
                 return; // Esci se il timer è attivo
             }else{
                 isTimerActive = true;
                 timeMinutes = timeMinutes-1;
                 backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
-            // qui ho tagliato la funzione per provare a farla diventare globale e funziona.
             // Inizializza il conto alla rovescia da 59
                 timerSeconds(timeSeconds-1);
             };
@@ -95,5 +99,9 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
         timeSeconds = 60; // Resetta i secondi
         backTimeMinutes.textContent = "00"; // Ripristina il display dei minuti
         backTimeSeconds.textContent = "00"; // Ripristina il display dei secondi
+    });
+
+    document.querySelector('#close').addEventListener('click', function(){
+        errorBox.style.display = 'none'; //per chiudere il box error
     });
     
