@@ -55,7 +55,7 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
                     isTimerActive = true;
                     timeMinutes = timeMinutes-1;
                     backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
-                // Initializes the countdown from 59'
+                    // Initializes the countdown from 59'
                     timerSeconds(timeSeconds-1);
                 };
                 
