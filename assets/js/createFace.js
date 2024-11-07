@@ -97,10 +97,11 @@ pushResume.className = "styleButtonPlayer";
 pushResume.innerHTML = "Resume";
 
 pushRefresh.id = "refresh";
-pushRefresh.className = "refreshStyle styleButtonPlayer";
+pushRefresh.className = "styleButtonPlayer";
+pushRefresh.innerHTML = 'Reset';
 
-paragraphDisplayCountdown.after(pushPlay, pushStop, pushResume);
-pushRefresh.innerHTML = '<img id="circleArrows" src="/assets/img/imageRefresh.png" alt="image arrows refresh">';
+paragraphDisplayCountdown.after(pushPlay, pushStop, pushResume, pushRefresh);
+
 
 //created 25", 15" and 5" buttons
 const pushTwentyFive = document.createElement("button");
@@ -133,7 +134,6 @@ const paragraphFifteen = document.createElement("p");
 circleTwentyFive.append(pushTwentyFive);
 circleFive.append(pushFive);
 circleFifteen.append(pushFifteen);
-containerBotton.append(pushRefresh);
 
 
 

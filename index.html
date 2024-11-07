@@ -49,7 +49,7 @@
     </header>
     
     <div class="wrapper-column">
-        <div class="column-counter">
+        <div class="column-counter" id="column">
             
             <!--start row clock-->
             <div class="row-interface" id="row-clock"> 
@@ -76,17 +76,17 @@
                 </div>
             </div>
 
-            
+            <section>
+              <!--section for the error message-->
+              <div class="alert" style="display: none;" id="boxError">
+                <span class="closebtn" id="close">&times;</span>
+                <div id="messageError"></div> 
+              </div>
+            </section> 
             
         </div>
     </div>
-    <section>
-      <!--section for the error message-->
-      <div class="alert" style="display: none;" id="boxError">
-        <span class="closebtn" id="close">&times;</span>
-        <div id="messageError"></div> 
-      </div>
-    </section>
+    
 
     <div class="extra">
     <!--to send the footer at the bottom of the page when the content is not enough-->

@@ -9,7 +9,7 @@ const startAgain = document.querySelector('#resume');
 const resetTimer = document.querySelector("#refresh");
 const imageArrows = document.querySelector("#circleArrows");
 const list = document.querySelector('#myList'); // interval button container
-const listCommands = document.querySelector('#row-countdown'); //container for play, stop and resume buttons
+const listCommands = document.querySelector('#column'); //container for play, stop and resume buttons
 const errorBox = document.querySelector('#boxError'); // error message container
 const message = document.querySelector('#messageError'); // message container
 const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC/raw/refs/heads/main/assets/audio/finishedTimer.mp3"); // sound finish timer
@@ -41,7 +41,7 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
 
     listCommands.addEventListener('click', function(event) {
         if (event.target.tagName === 'BUTTON') { 
-        
+            console.log(event.target.tagName);
             if(event.target.id === 'play'){
                 if (isTimerActive) {
                     errorBox.style.display = 'block';
@@ -71,22 +71,26 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
                     timeSecondsPass = 0; // resets the past seconds variable.
                     timerSeconds(timeSeconds - timeSecondsNew); // the function starts with the fewer seconds already passed
                 }    
+            } else if(event.target.id === 'refresh'){
+                clearTimeout(timerId); // Clear the active timer
+                isTimerActive = false; // Set the timer to inactive
+                timeMinutes = 0; // Reset the minutes
+                timeSeconds = 60; // Reset the seconds
+                backTimeMinutes.textContent = "00"; // Reset the minute display
+                backTimeSeconds.textContent = "00"; // Reset the seconds display
             }
         }else{
             return;
         }
-    });
 
-    resetTimer.addEventListener('click', function(){
-        clearTimeout(timerId); // Clear the active timer
-        isTimerActive = false; // Set the timer to inactive
-        timeMinutes = 0; // Reset the minutes
-        timeSeconds = 60; // Reset the seconds
-        backTimeMinutes.textContent = "00"; // Reset the minute display
-        backTimeSeconds.textContent = "00"; // Reset the seconds display
+        
+        
     });
-
     document.querySelector('#close').addEventListener('click', function(){
         errorBox.style.display = 'none'; //to close the error box on the user's click on the x
     });
+
+
+
+ 
     
