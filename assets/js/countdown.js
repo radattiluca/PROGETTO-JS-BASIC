@@ -7,8 +7,6 @@ const start = document.querySelector('#play');
 const stopCountDown = document.querySelector('#stopTimer');
 const startAgain = document.querySelector('#resume');
 const resetTimer = document.querySelector("#refresh");
-const imageArrows = document.querySelector("#circleArrows");
-const list = document.querySelector('#myList'); // interval button container
 const listCommands = document.querySelector('#column'); //container for play, stop and resume buttons
 const errorBox = document.querySelector('#boxError'); // error message container
 const message = document.querySelector('#messageError'); // message container
@@ -25,24 +23,22 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
     errorBox.hidden = true; //we set the error div to invisible
 
 
-    list.addEventListener('click', function(event) {
-
-        if(isTimerActive){
-            errorBox.hidden = false;
-            messageError.innerHTML = "<strong>ATTENTION!</strong><br> The timer is already running. <br> Press the refresh button before entering a new value";
-            return;
-        }else if (event.target.tagName === 'BUTTON') { 
-                //if the click occurred on a button we ask which button it is and take its value.
-                timeMinutes = 0; //to reset the variable if you select a button before choosing the one for the timer
-                timeMinutes = parseInt(event.target.value); //we make sure it's an integer and put it in the timeMinutes variable
-                backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes; 
-        }; 
-    
-    });
-
     listCommands.addEventListener('click', function(event) {
         if (event.target.tagName === 'BUTTON') { 
-            if(event.target.id === 'play'){
+        
+            if(event.target.id === 'buttonTwentyFive' || event.target.id === 'buttonFive' || event.target.id === 'buttonFifteen') { 
+                if(isTimerActive){ //if the code is already running with another interval an error message appears
+                    errorBox.hidden = false;
+                    messageError.innerHTML = "<strong>ATTENTION!</strong><br> The timer is already running. <br> Press the refresh button before entering a new value";
+                    return;
+                }else{
+                    //if the click occurred on a button we ask which button it is and take its value.
+                    timeMinutes = 0; //to reset the variable if you select a button before choosing the one for the timer
+                    timeMinutes = parseInt(event.target.value); //we make sure it's an integer and put it in the timeMinutes variable
+                    backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
+                };
+                 
+            } else if(event.target.id === 'play'){
                 if (isTimerActive) {
                     errorBox.hidden = false;
                     messageError.innerHTML = "<strong>ATTENTION!</strong><br> The timer is already active. You cannot start a new timer.";
@@ -70,7 +66,7 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
                     isTimerActive = true;
                     timeSecondsPass = 0; // resets the past seconds variable.
                     timerSeconds(timeSeconds - timeSecondsNew); // the function starts with the fewer seconds already passed
-                }    
+                };   
             } else if(event.target.id === 'refresh'){
                 clearTimeout(timerId); // Clear the active timer
                 isTimerActive = false; // Set the timer to inactive
@@ -81,7 +77,7 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
             } else if(event.target.id === 'close'){
                     errorBox.hidden = true; //to close the error box on the user's click on the x
                     
-                }
+                };
                
         }else{
             return;
