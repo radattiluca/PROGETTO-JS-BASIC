@@ -22,12 +22,13 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
     let timer;
     let timerId; // Variable to track timer
     let isTimerActive = false; // Timer state variable
+    errorBox.hidden = true; //we set the error div to invisible
 
 
     list.addEventListener('click', function(event) {
 
         if(isTimerActive){
-            errorBox.style.display = 'block';
+            errorBox.hidden = false;
             messageError.innerHTML = "<strong>ATTENTION!</strong><br> The timer is already running. <br> Press the refresh button before entering a new value";
             return;
         }else if (event.target.tagName === 'BUTTON') { 
@@ -41,14 +42,13 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
 
     listCommands.addEventListener('click', function(event) {
         if (event.target.tagName === 'BUTTON') { 
-            console.log(event.target.tagName);
             if(event.target.id === 'play'){
                 if (isTimerActive) {
-                    errorBox.style.display = 'block';
+                    errorBox.hidden = false;
                     messageError.innerHTML = "<strong>ATTENTION!</strong><br> The timer is already active. You cannot start a new timer.";
                     return; // Exit if the timer is active
                 } else if (!(timeMinutes === 5 || timeMinutes === 15 || timeMinutes === 25)){
-                    errorBox.style.display = 'block';
+                    errorBox.hidden = false;
                     messageError.innerHTML = "<strong>ATTENTION!</strong><br> No interval has been chosen.<br> It is not possible to start the timer if you have not previously chosen a time interval.";
                     return; // Exit if you have not chosen the interval
                 }else{
@@ -78,7 +78,10 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
                 timeSeconds = 60; // Reset the seconds
                 backTimeMinutes.textContent = "00"; // Reset the minute display
                 backTimeSeconds.textContent = "00"; // Reset the seconds display
-            }
+            } else if(event.target.id === 'close'){
+                    errorBox.hidden = true; //to close the error box on the user's click on the x
+                }
+               
         }else{
             return;
         }
@@ -86,10 +89,7 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
         
         
     });
-    document.querySelector('#close').addEventListener('click', function(){
-        errorBox.style.display = 'none'; //to close the error box on the user's click on the x
-    });
-
+    
 
 
  
