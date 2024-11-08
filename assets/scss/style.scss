@@ -45,7 +45,7 @@ body{
 }
 
 .display{
-    width: 200px;
+    width: auto;
     height: 60px;
     border-radius: 5px;
     padding: 10px;
@@ -61,7 +61,7 @@ body{
 }
 
 
-.refreshStyle{
+.refreshStyle{ //ricordati di modificare questo perchè non abbiamo più l'immagine
     width: 50px;
     font-weight: $weightFontButton;
     font-size: 1.2em;
