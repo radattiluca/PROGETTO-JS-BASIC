@@ -14,13 +14,19 @@
        }
 }
 
+.row-logo-footer{
+    img{
+        width: 80px;
+    }
+}
+
 .extra, .column-footer{
     height: 100px; //to send the footer at the bottom of the page when the content is not enough
 }
 
 .row-social-footer{
     svg{
-        width: 30px;
+        width: 40px;
         height: 20px;
         fill: $colorLightPink;
         border-radius: 5px;
