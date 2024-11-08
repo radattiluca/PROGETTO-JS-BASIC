@@ -80,6 +80,7 @@ const audioElement = new Audio("https://github.com/radattiluca/PROGETTO-JS-BASIC
                 backTimeSeconds.textContent = "00"; // Reset the seconds display
             } else if(event.target.id === 'close'){
                     errorBox.hidden = true; //to close the error box on the user's click on the x
+                    
                 }
                
         }else{
