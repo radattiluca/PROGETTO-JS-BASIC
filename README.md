@@ -48,12 +48,14 @@ Selezionare l'intervallo di tempo da 25 minuti e premere il tasto **play**, a qu
 
 Se volessimo fermare il timer, possiamo premere il tasto **pause** e riprenderlo quando vogliamo premendo il tasto **resume**. 
 
-Una volta scaduti i 25 minuti, abbiamo completato un pomodoro. Possiamo segnare 1 sul contatore premendo il tasto **+** e cliccare sul pulsante con il numero **5'** per iniziare la pausa breve di 5 min.
+Una volta scaduti i **25 minuti**, abbiamo completato un pomodoro. Possiamo incrementare ad 1 il contatore premendo il tasto **+** e cliccare sul pulsante con il numero **5'** per iniziare la pausa breve di **5 min**.
 Per far partire il timer da 5 minuti possiamo procedere come descritto per il timer precedente.
 
-Al completamento dei 4 cicli da 25 minuti e 5 di pausa potremmo avviare il timer per la pausa lunga di 15 minuti.
+Al completamento dei 4 cicli da **25 minuti** e **5 di pausa** potremmo avviare il timer per la pausa lunga di **15 minuti**.
 
 Se avessimo bisogno di resettare uil timer a 0, possiamo premere il tasto **reset**.
+
+Se dovessimo eseguire delle operazioni non consentite, l'applicazione ci darà dei messaggi di errore che ci guideranno nel giusto utilizzo di essa.
 
 L'applicazione può essere usata come meglio si desidera.
 
