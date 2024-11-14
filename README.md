@@ -44,15 +44,16 @@ Qui di seguito troverete il link che vi spiegà cos'è la "Tecnica del Pomodoro"
 
 Prima di utilizzare l'applicazione leggere la "Tecnica del Pomodoro" al link che ho allegato nella sezione **Descrizione** [Vai al link](#descrizione).
 
-Selezionare l'intervallo di tempo da 25 minuti e premere il tasto **play**, a questo punto il timer partirà. Nel frattempo possiamo leggere l'ora corrente oppure usare il contatore per tenere conto di qualsiasi cosa abbiamo bisogno.
+Selezionare l'intervallo di tempo da 25 minuti e premere il tasto **play**, a questo punto il timer partirà. Nel frattempo possiamo leggere l'ora corrente oppure usare il contatore per tenere conto dei pomodori terminati o di qualsiasi cosa abbiamo bisogno.
 
-Se abbiamo bisogno di fermare il timer, possiamo premere il tasto **pause** e riprenderlo quando vogliamo ripremendo **play**. 
+Se volessimo fermare il timer, possiamo premere il tasto **pause** e riprenderlo quando vogliamo premendo il tasto **resume**. 
 
-Una volta scaduti i 25 minuti dobbiamo riaggiornare la pagina con il pulsante **refresh** :arrows_counterclockwise: questo pulsante aggiornerà l'intera pagina, azzerando anche il contatore.
-
-A questo punto possiamo prenderci una pausa di 5 minuti prima di riprendere il nostro lavoro per altri 25'. Per far partire il timer da 5 minuti possiamo procedere come descritto per il timer precedente.
+Una volta scaduti i 25 minuti, abbiamo completato un pomodoro. Possiamo segnare 1 sul contatore premendo il tasto **+** e cliccare sul pulsante con il numero **5'** per iniziare la pausa breve di 5 min.
+Per far partire il timer da 5 minuti possiamo procedere come descritto per il timer precedente.
 
 Al completamento dei 4 cicli da 25 minuti e 5 di pausa potremmo avviare il timer per la pausa lunga di 15 minuti.
+
+Se avessimo bisogno di resettare uil timer a 0, possiamo premere il tasto **reset**.
 
 L'applicazione può essere usata come meglio si desidera.
 
