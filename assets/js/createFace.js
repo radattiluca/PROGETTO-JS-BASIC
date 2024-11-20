@@ -25,17 +25,16 @@ const pushMinus = document.createElement("button");
 pushPlus.id = "plus";
 pushPlus.className = "styleButtonPlayer";
 pushPlus.innerHTML = "+";
-pushPlus.setAttribute('data-action', 'add');
+
 
 pushReset.id = "reset";
 pushReset.className = "styleButtonPlayer";
 pushReset.innerHTML = "Reset";
-pushReset.setAttribute('data-action', 'zero');
+
 
 pushMinus.id = "minus";
 pushMinus.className = "styleButtonPlayer";
 pushMinus.innerHTML = "-";
-pushMinus.setAttribute('data-action', 'sub');
 paragraphDisplayCounter.after(pushMinus, pushReset, pushPlus);
 
 

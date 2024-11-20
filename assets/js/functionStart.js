@@ -1,19 +1,21 @@
 'use strict';
 
+/**This is the main function of the timer.Thanks to a recursive call it allows us to decrease the count. When the counter reaches 0, if the minutes are also equal to 0 it will execute a .play and start a setInterval which will make the timer flash, otherwise it will call the function to restart the counting of seconds. */
+
 function timerSeconds (count) {
     // Show the current number
     backTimeSeconds.textContent = count <= 9 ? `0${count}` : count;
 
     // If the count is greater than 0, continue the countdown
     if (count > 0) {
-        timerId = setTimeout(() => {
+        timerId = setTimeout(function(){
             timerSeconds(count - 1); // Recursive call with the number decremented
         }, 1000);
 
-    } else if (count == 0){
+    } else{
         // When the seconds count reaches 0
         if(timeMinutes != 0){
-            setTimeout(()=>{
+            setTimeout(function(){
                 timeMinutes--; //time minutes is decremented
                 backTimeMinutes.textContent = timeMinutes <= 9 ? `0${timeMinutes}` : timeMinutes;
                 clearTimeout(timerId); // delete the previous timer
