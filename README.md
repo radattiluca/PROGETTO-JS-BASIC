@@ -53,7 +53,7 @@ Per far partire il timer da 5 minuti possiamo procedere come descritto per il ti
 
 Al completamento dei 4 cicli da **25 minuti** e **5 di pausa** potremmo avviare il timer per la pausa lunga di **15 minuti**.
 
-Se avessimo bisogno di resettare uil timer a 0, possiamo premere il tasto **reset**.
+Se avessimo bisogno di resettare il timer a 0, possiamo premere il tasto **reset**.
 
 Se dovessimo eseguire delle operazioni non consentite, l'applicazione ci darà dei messaggi di errore che ci guideranno nel giusto utilizzo di essa.
 
