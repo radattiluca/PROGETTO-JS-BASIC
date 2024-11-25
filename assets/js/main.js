@@ -26,11 +26,11 @@ let timerId; // Variable to track timer
 let isTimerActive = false; // Timer state variable
 errorBox.hidden = true; //we set the error div to invisible
 
+
     if(listCommands!= null){ //the code is executed only if listCommands exists
         
         listCommands.addEventListener('click', function(event) {
             if (event.target.tagName === 'BUTTON') { 
-
                 // Increment the counter
                 if(event.target.id === 'plus'){
                     myCount++; 

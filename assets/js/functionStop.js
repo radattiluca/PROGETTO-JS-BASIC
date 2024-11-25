@@ -4,6 +4,10 @@
 
     function stop(){
 
+        if(timeMinutes == undefined){ //control to not start the key function before a value is defined.
+            return;
+        }
+
         clearTimeout(timerId); // the previous timer is cleared
         isTimerActive = false; 
         timeSecondsPass = parseInt(backTimeSeconds.innerText); // the variable takes the value of the seconds spent on the display and transformed into number
